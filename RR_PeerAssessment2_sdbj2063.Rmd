@@ -1,0 +1,709 @@
+---
+title: Heat and Storms in the United States Negatively Impact Human Life and Cost
+  Billions in Property and Food Loss
+author: "sdbj2063"
+date: "Sunday, January 25, 2015"
+output: pdf_document
+keep_md: yes
+---
+
+Heat and Storms in the United States Negatively 
+===============================================
+Impact Human Life and 
+=======================
+Cost Billions in Property and Food Loss
+=======================================
+### Johns Hopkins and Coursera
+### Reproducible Research Class
+### Peer Assessment 2
+
+#### January 24, 2015
+
+#### user sdbj2063
+
+# Synopsis (10 sentences max.)
+
+By calculating the mean for injuries, fatalities, property damage and crop damage based upon the severe 
+weather event type, it became obvious that global warming is having an adverse impact on 
+human health, property and food sources.
+
+The project used the data set "Storm Data" from the National Oceanic and Atmospheric Administration (NOAA) 
+for 1950 through November 2011. 
+
+The project required developers to determine which types of storm weather events in the United States 
+were the most harmful to "population health" and which types had the "greatest economic consequences."
+
+Regarding the impact on human life, more event types had injuries than deaths, and the largest event type 
+for injuries had almost triple the number of incidents compared to the largest event type for fatalities. 
+
+Eleven event types had both injuries and fatalities of more than one person, and heat-related events 
+accounted for a high number of fatalities and injuries.
+
+Regarding economic impact, more event types had property damage than crop damage. 
+
+While the largest event type based upon dollars for property damage was greater than the largest event 
+for crop damage, both involved rain or moisture.
+
+Property damage and crop damage occured jointly in 111 event types, and storm-related events accounted 
+for a high number of property and crop damage events.
+
+Finally, eight events had all four factors--human injuries and fatalities, property and crop damage--
+and five of those events were directly related to heat.
+
+
+# Documentation Conventions
+
+In the **Result** section, each project problem has a heading **Problem**.  
+
+Beneath that are **Questions** that the script uses to address the problem, **CONCLUSIONS** about the 
+data processed for the problem with script and explanation and an **Illustrative Graph** for each problem.
+
+R functions appear in the text blocks the first time as *function-name* in *italics* followed by 
+"function." Subsequent references use the format *function-name()*.
+
+Calculated variable values are displayed within the code block results and within text blocks as 
+`variable-name` "variable."  
+
+Field or variable names within an R data frame appear within the text blocks as **field-name** 
+in bold followed by "field."
+
+
+
+# Data Processing
+
+## Loading the Data
+
+Several libraries were necessary to complete the aggregate computations and develop the boxplots.
+
+```{r dploadlibraries, echo=TRUE}
+## Set up libraries
+
+library(base)
+library(utils)
+library(graphics)
+library(grDevices)
+library(stringr)
+library(plyr)
+library(lattice)
+```
+
+The script downloads the *.bz2 archive and loads the data into a data frame, eliminating 
+unnecessary columns.  
+
+```{r loaddata, echo=TRUE}
+## Download the zip file and overwrite an existing file
+myfile <- "repdata_data_StormData.csv.bz2"
+mypath <- "http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2"
+
+download.file(mypath, myfile, quiet = FALSE, mode = "wb")
+```
+
+The usable fields included the event type, **EVTYPE** field; counts for injuries and fatalities, 
+**INJURIES** and **FATALITIES** fields; and total dollar amounts per event for property 
+damage and crop damage, **PROPDMG**, **PROPDMGEXP**, **CROPDMG** and **CROPDMGEXP** fields.  
+The two **EXP** fields are the indicators for the demonation of the numeric value, such as "K" 
+for thousands. **EVTYPE** became a character string to ease searching.  
+
+```{r definecolumns, echo=TRUE}
+## Unzip the file and load seven data columns into R
+mycolclasses <- c(rep("NULL", 7), "factor", rep("NULL", 14), rep("numeric", 3), "factor", "numeric", "factor", rep("NULL", 9))
+
+mydata <- read.csv(bzfile(myfile), colClasses = mycolclasses)
+
+## make EVTYPE character for string searching purposes
+mydata$EVTYPE <- as.character(mydata$EVTYPE)
+```
+
+The resulting format is small and better prepared for manipulation.
+
+```{r premydata, echo=TRUE}
+str(mydata)
+```
+
+## Preprocessing Property and Crop Damage Data
+
+To standardize the approach to answering the questions, I chose to find the average of the values fields 
+for each event type using the **EVTYPE** field. While the raw data was suitable for human fatalities and 
+injuries, the property and crop damage figures needed preprocessing to achieve a usable number.
+
+The original data set contained two fields for the property damage, a numerical figure **PROPDMG** and a 
+character field **PROPDMGEXP** indicating what U.S. Dollar amount should be included. According to the 
+NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, "STORM DATA PREPARATION,"  "K" stood for 
+thousands of dollars, "M" stood for millions and "B" stood for billions. The character field contained 
+other values the project documentation did not acknowledge, so dollar calculations ignored those values.   
+
+```{r p2setup, echo=TRUE}
+## Obtain list of demoninator values for property and crop damage
+mydamage.property.u <- as.character(unique(mydata$PROPDMGEXP))
+mydamage.crop.u <- as.character(unique(mydata$CROPDMGEXP))
+
+mydamage.property.u
+mydamage.crop.u 
+
+
+```
+
+Once the script identified the denominator factors, it added two fields to the original data set, one for 
+the calculated the total dollar cost for property damage and the second for crop damage.
+
+
+```{r dpaddtotalcostfields, echo=TRUE}
+## Add new calculated total cost fields for property damage and crop damage.
+mydata$PROPDMGCOST <- 0
+mydata$CROPDMGCOST <- 0    
+```
+
+By multiplying the property number **PROPDMG** by the appropriate operator based upon the denominator in 
+**PROPDMGEXP** the script calculated the total dollar amount for each event.
+
+```{r p1calctotalcostproperty, echo=TRUE}
+## Calculate total cost PROPDMGCOST
+## Use three values identified in paperwork, K, M and B
+## Multiple PROPDMG > 0 by appropriate valuation
+
+## Thousands using K
+mydata[mydata$PROPDMGEXP %in% c(mydamage.property.u[1]) & mydata$PROPDMG > 0, 8 ] <- as.numeric(mydata[mydata$PROPDMGEXP %in% c
+(mydamage.property.u[1]) & mydata$PROPDMG > 0, 4 ] * 1000)
+
+## Millions using M
+mydata[mydata$PROPDMGEXP %in% c(mydamage.property.u[2]) & mydata$PROPDMG > 0, 8 ] <- as.numeric(mydata[mydata$PROPDMGEXP %in% c
+(mydamage.property.u[2]) & mydata$PROPDMG > 0, 4 ] * 1000000)
+
+## Billions using B
+mydata[mydata$PROPDMGEXP %in% c(mydamage.property.u[4]) & mydata$PROPDMG > 0, 8 ] <- as.numeric(mydata[mydata$PROPDMGEXP %in% c
+(mydamage.property.u[4]) & mydata$PROPDMG > 0, 4 ] * 1000000000)
+```
+
+
+The original data set contained two fields for the crop damage, a numerical figure **CROPDMG** and a 
+character field **CROPDMGEXP** indicating what U.S. Dollar amount should be included. According to the 
+NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, "STORM DATA PREPARATION,"  "K" stood for 
+thousands of dollars, "M" stood for millions and "B" stood for billions. The character field contained 
+other values the project documentation did not acknowledge, so dollar calculations ignored those values.   
+
+By multiplying the property number **CROPDMG** by the appropriate operator based upon the denominator in 
+**CROPDMGEXP** the script calculated the total dollar amount for each event.
+
+```{r p1calctotalcostcrop, echo=TRUE}
+## Calculate total cost CROPDMGCOST
+## Use three values identified in paperwork, K, M and B
+## Multiple CROPDMG > 0 by appropriate valuation
+
+## Thousands using K
+mydata[mydata$CROPDMGEXP %in% c(mydamage.crop.u[3]) & mydata$CROPDMG > 0, 9 ] <- as.numeric(mydata[mydata$CROPDMGEXP %in% c
+(mydamage.crop.u[3]) & mydata$CROPDMG > 0, 6 ] * 1000)
+
+## Millions using M
+mydata[mydata$CROPDMGEXP %in% c(mydamage.crop.u[2]) & mydata$CROPDMG > 0, 9 ] <- as.numeric(mydata[mydata$CROPDMGEXP %in% c
+(mydamage.crop.u[2]) & mydata$CROPDMG > 0, 6 ] * 1000000)
+
+## Billions using B
+mydata[mydata$CROPDMGEXP %in% c(mydamage.crop.u[5]) & mydata$CROPDMG > 0, 9 ] <- as.numeric(mydata[mydata$CROPDMGEXP %in% c
+(mydamage.crop.u[5]) & mydata$CROPDMG > 0, 6 ] * 1000000000)
+
+```
+
+The final step created a new data set with damage values greater than zero (0).
+
+```{r p2totalpropertycrop, echo=TRUE}
+## Create new data set. 
+## Keep rows with property or crop damage amounts greater than 0 to reduce the size of the data set.
+
+mydata.2 <- mydata[mydata$PROPDMGCOST > 0 | mydata$CROPDMGCOST > 0, c(1,8,9)]
+```
+
+More data calculations and instructions pertaining to each question and the strategy to reach conclusions  
+are in the **Results** section of this document.  
+
+# Results
+
+The results are divided into two sections, one for each of the problems presented in the project. 
+Each section has one two-boxplot layout to show the range of impact for each category--
+human injuries and fatalities and damage to property and crops. The final conclusion examines the entire 
+data set of mean values to identify what event types have all four categories--injuries 
+and fatalities for humans, property damage and crop damage.  
+
+## Summary of Results
+
+I used the mean, or average, of each of the four key numeric fields--number of fatalities and number of 
+injuries for human impact and the total cost of property damage and total cost of crop 
+damage for economic impact--grouped by the type of event to reach basic conclusions about the impact 
+of severe weather events on the United States of America's population and economy.  
+
+While all the events could have a potential economic impact for human beings, I focused on direct 
+affects to life and limb for humans.  
+
+Pertaining to events harmful to human population health:  
+1. More event types resulted in injuries to human beings than deaths.  
+2. The largest event type for injuries was almost triple the number of incidents for the largest 
+event type for fatalities.  
+3. Eleven event types had both injuries and fatalities of more than one person.  
+4. Heat-related events accounted for a high number of both fatalities and injuries.  
+
+Pertaining to events having the greatest economic impact:  
+1. More event types reesult in property damage than crop damage.  
+2. The largest event type for property damage has more damage than the largest event for crop damage, 
+but both involve rain or moisture.  
+3. In total, 111 event types have both property damage and crop damage.  
+4. Storm-related events accounted for a high number of events with property or crop damage.  
+
+Concluding finding:  
+Eight events had all four factors--human injuries and fatalities, property and crop damage--
+and five of those events were directly related to heat.  
+
+## Problem One:  Across the U.S., which event types were most harmful to population health?  
+
+The original data set recorded two variables with data pertinent to human health--injuries and 
+fatalities. To address this problem, I focused on calculating the mean for each event type for 
+injuries and fatalities using the **INJURIES** field, **FATALITIES** field and **EVTYPE** field.  
+
+
+### QUESTION: What was the mean number of injuries to humans based upon event?
+ 
+The strategy was to calculate the mean number of injuries for each event type and limit the data set 
+to events with more than one occurrence. Original examination of the data showed a plethera of events 
+with one occurrence. The final step was to order the data in descending order based upon the number 
+of injuries.  
+
+```{r p1meaninjuries, echo=TRUE}
+## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.injuries <- aggregate(INJURIES ~ EVTYPE, data = mydata, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.injuries.1 <- mydata.mean.injuries[mydata.mean.injuries$INJURIES > 1,]
+
+## Order the data in descending order based upon the mean number injuries per event type.
+mydata.mean.injuries.1 <- mydata.mean.injuries.1[with(mydata.mean.injuries.1, order(-INJURIES)), ]
+```
+
+The resulting data set showed that the mean number of injuries was no more than 70 and most were below 10.  
+
+```{r p1meaninjurieslist, echo=TRUE}
+## List event types in descending order based upon the mean number of injuries
+mydata.mean.injuries.1
+
+```
+
+### QUESTION: What was the mean number of fatalities for humans based upon event?   
+
+The strategy was to calculate the mean number of fatalities for each event type and limit the data set 
+to events with more than one occurrence. Original examination of the data showed a plethera of events 
+with one occurrence. The final step was to order the data in descending order based upon the number 
+of fatalities.  
+
+```{r p1meanfatalities, echo=TRUE}
+## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.fatalities <- aggregate(FATALITIES ~ EVTYPE, data = mydata, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.fatalities.1 <- mydata.mean.fatalities[mydata.mean.fatalities$FATALITIES > 1,]
+
+## Order the data in descending order based upon the mean number of fatalities per event type.
+mydata.mean.fatalities.1 <- mydata.mean.fatalities.1[with(mydata.mean.fatalities.1, order(-FATALITIES)), ]
+```
+
+The resulting data set showed that most of the events had a mean number of fatalities below 10.  
+
+```{r p1meanfatalitieslist, echo=TRUE}
+## List event types in descending order based upon the mean number of fatalities
+mydata.mean.fatalities.1
+```
+
+## CONCLUSION #1
+
+More event types resulted in injuries to human beings than deaths.  
+
+The script counted the number of rows in the respective data sets for injuries and fatalities 
+to obtain the total number of event types for each indicent category.  
+
+```{r p1c1injuriesfatalities, echo=TRUE}
+## Record the number of event types for injuries
+mydata.mean.injuries.1.no <- nrow(mydata.mean.injuries.1)
+mydata.mean.injuries.1.no
+
+## Record the number of event types for fatalities
+mydata.mean.fatalities.1.no <- nrow(mydata.mean.fatalities.1)
+mydata.mean.fatalities.1.no
+
+```
+
+
+
+## CONCLUSION #2
+
+The largest event type for injuries was almost triple the number of incidents for the largest 
+event type for fatalities.   
+
+The script collected the first value in the ordered data sets for injuries and fatalities, respectively.  
+
+```{r p1highestnumber, echo=TRUE}
+## Record the highest injury event type
+mydata.mean.injuries.1.high <- mydata.mean.injuries.1[1,]
+mydata.mean.injuries.1.high
+
+## Record the highest fatality event type
+mydata.mean.fatalities.1.high <- mydata.mean.fatalities.1[1,]
+mydata.mean.fatalities.1.high
+
+```
+## Illustrative Graph
+
+The side-by-side boxplot graphs showed the mean number of injuries and fatalities on the same scale. 
+The graph marked the box boundaries for the 1st through 3rd quartiles. Outliers appeared as circles.  
+
+```{r p1plotinjuriesfatalities, echo=TRUE}
+## Set graph properties for property and crop damage
+mymain.injuries <- "Mean Number of Injuries"
+myxlab.injuries <- "1st Quartile to 3rd Quartile Box"
+myylab.injuries <- "Mean Number"
+myylim.injuries <- c(0,mydata.mean.injuries.1.high[1,2])
+mymain.fatalities <- "Mean Number of Fatalities"
+myxlab.fatalities <- "1st Quartile to 3rd Quartile Box"
+myylab.fatalities <- "Mean Number"
+myylim.fatalities <- c(0,mydata.mean.injuries.1.high[1,2])
+
+## Create one row, two column layout for the injuries and fatalities boxplots, respectively
+par(mfrow = c(1, 2))
+
+boxplot(mydata.mean.injuries.1$INJURIES, main=mymain.injuries, xlab=myxlab.injuries, ylab=myylab.injuries, ylim=myylim.injuries)
+
+boxplot(mydata.mean.fatalities.1$FATALITIES, main=mymain.fatalities, xlab=myxlab.fatalities, ylab=myylab.fatalities, 
+ylim=myylim.fatalities)
+
+```
+
+
+## CONCLUSION #3
+
+Eleven event types had both injuries and fatalities of more than one person.  
+
+The script merged the injury and fatality data sets, focusing on common event types. It calculated 
+the number of events by counting the number of rows in the merged data set.   
+
+```{r p1mergedata, echo=TRUE}
+## Merge the injury and fatality mean data sets and order in descending order by injuries and fatalities 
+mydata.mean.merge.people <- merge(mydata.mean.injuries.1, mydata.mean.fatalities.1, by.x="EVTYPE", by.y="EVTYPE")
+mydata.mean.merge.people <- mydata.mean.merge.people[with(mydata.mean.merge.people, order(-INJURIES, -FATALITIES)), ]
+mydata.mean.merge.people
+
+## Count the number of rows to calculate the number of event types with both injuries and fatalities
+mydata.mean.merge.people.no <- nrow(mydata.mean.merge.people)
+mydata.mean.merge.people.no
+```
+
+## CONCLUSION #4
+
+Heat-related events accounted for a high number of fatalities and injuries.  
+
+The script searched the event types for "heat" and calculated the number of events for injuries 
+and fatalities by counting the number of rows that met the criteria.  
+
+```{r p1meanheat, echo=TRUE}
+## Search for injury event types with "heat"
+mydata.mean.injuries.heat <- grep("[Hh][Ee][Aa][Tt]", mydata.mean.injuries.1$EVTYPE, value=TRUE)
+mydata.mean.injuries.heat
+
+## Calculate the number of events for injuries with "heat" in the name             
+mydata.mean.injuries.heat.no <- length(grep("[Hh][Ee][Aa][Tt]", mydata.mean.injuries.1$EVTYPE, value=TRUE))
+mydata.mean.injuries.heat.no
+## Count of total injuries
+mydata.mean.injuries.1.no
+
+## Search for fatality event types with "heat"
+mydata.mean.fatalities.heat <- grep("[Hh][Ee][Aa][Tt]", mydata.mean.fatalities.1$EVTYPE, value=TRUE)
+mydata.mean.fatalities.heat
+
+## Calculate the number of events for fatalities with "heat" in the name
+mydata.mean.fatalities.heat.no <- length(grep("[Hh][Ee][Aa][Tt]", mydata.mean.fatalities.1$EVTYPE, value=TRUE))
+mydata.mean.fatalities.heat.no
+## Count of total fatalities
+mydata.mean.fatalities.1.no
+
+```
+
+Out of the events with injuries, `mydata.mean.injuries.1.no` variable with 
+**`r format(mydata.mean.injuries.1.no, 2)`**  events, **`r format(mydata.mean.injuries.heat.no,2)`** events were 
+related to heat, based upon the `mydata.mean.injuries.heat.no` variable.   
+
+Out of the events with fatalities, `mydata.mean.fatalities.1.no` variable with 
+**`r format(mydata.mean.fatalities.1.no, 2)`**  events, **`r format(mydata.mean.fatalities.heat.no, 2)`** events were 
+related to heat, based upon the `mydata.mean.fatalities.heat.no` variable.   
+
+## Problem 2: Across the U.S., which types of events had the greatest economic consequences?
+
+To address this problem, I focused on calculating the mean for each event type for property damage 
+and crop damage. The numbers were so large as to be meaningless in a graph, so the illustrative 
+graph uses the log scale.  
+
+
+
+### QUESTION: What was the mean dollar amount of property damage based upon event type?   
+
+The strategy was to calculate the mean amount for each event type and limit the data set to 
+events with more than zero occurrences. The final step was to order the data in descending order 
+based upon dollar amount.  
+
+
+```{r p2calcmeanproperty, echo=TRUE}
+## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.property <- aggregate(PROPDMGCOST ~ EVTYPE, data = mydata.2, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.property.1 <- mydata.mean.property[mydata.mean.property$PROPDMGCOST != 0,]
+
+## Order the data in descending order based upon the total cost per event type.
+mydata.mean.property.1 <- mydata.mean.property.1[with(mydata.mean.property.1, order(-PROPDMGCOST)), ]
+```
+
+The resulting data set, below, ordered from largest dollar amount descending, was exhausive. Further processing was necessary.   
+
+```{r p2meanpropertylist, echo=TRUE}
+mydata.mean.property.1
+```
+
+
+### QUESTION: What was the mean dollar amount of crop damage based upon event type?   
+ 
+The strategy was to calculate the mean amount for each event type and limit the data set to 
+events with more than zero occurrences. The final step was to order the data in descending 
+order based upon dollar amount.  
+
+
+```{r p2calcmeancrop, echo=TRUE}
+## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.crop <- aggregate(CROPDMGCOST ~ EVTYPE, data = mydata.2, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.crop.1 <- mydata.mean.crop[mydata.mean.crop$CROPDMGCOST != 0,]
+
+## Order the data in descending order based upon the total cost per event type.
+mydata.mean.crop.1 <- mydata.mean.crop.1[with(mydata.mean.crop.1, order(-CROPDMGCOST)), ]
+```
+
+The resulting data set, below, ordered from largest dollar amount descending, was exhausive. Further processing was necessary.   
+
+```{r p2meancroplist, echo=TRUE}
+mydata.mean.crop.1
+```
+
+
+## CONCLUSION #1
+
+More event types resulted in property damage than crop damage.  
+
+The script counted the number of rows in the respective data sets for property and crop damage 
+to obtain the total number of event types for each damage category.  
+
+```{r p2meanpropertycropno, echo=TRUE}
+## Calculate the total number of event types with property damage
+mydata.mean.property.1.no <- nrow(mydata.mean.property.1)
+mydata.mean.property.1.no
+
+
+## Calculate the total number of event types with crop damage
+mydata.mean.crop.1.no <- nrow(mydata.mean.crop.1)
+mydata.mean.crop.1.no
+
+```
+
+
+
+## CONCLUSION #2
+
+The largest event type for property damage had more damage than the largest event for crop damage, 
+but both involved rain or moisture.   
+
+The script collected the first value in the ordered data sets for property and crop damage, respectively.  
+
+
+```{r p2propertycrophigh, echo=TRUE}
+## Identify the event type with the highest property damage
+mydata.mean.property.1.high <- mydata.mean.property.1[1,]
+mydata.mean.property.1.high
+
+
+## Identify the event type with the highest crop damage
+mydata.mean.crop.1.high <- mydata.mean.crop.1[1,]
+mydata.mean.crop.1.high
+
+```
+
+## Illustrative Graph
+
+The side-by-side boxplot graphs showed the mean dollar amount of property and crop damage on 
+the same log scale. Due to the size of the dollar amounts, the y-axis scale used the log of the 
+mean values. The graph marked the box boundaries for the 1st and 3rd quartiles. Outliers appeared as 
+circles.
+
+
+```{r p2plotboxplot, echo=TRUE}
+## Set graph properties for property and crop damage
+mymain.property <- "Mean $ Amount Property Damage"
+myxlab.property <- "1st Quartile to 3rd Quartile Box"
+myylab.property <- "Mean Number on Log Scale"
+myylim.property <- c(0,log(mydata.mean.property.1.high[1,2]))
+mymain.crop <- "Mean $ Amount Crop Damage"
+myxlab.crop <- "1st Quartile to 3rd Quartile Box"
+myylab.crop <- "Mean Number on Log Scale"
+myylim.crop <- c(0,log(mydata.mean.property.1.high[1,2]))
+
+## Create one row, two column layout for the property and crop damage boxplots, respectively
+par(mfrow = c(1, 2))
+
+boxplot(log(mydata.mean.property.1$PROPDMGCOST), main=mymain.property, xlab=myxlab.property, ylab=myylab.property, 
+ylim=myylim.property)
+
+boxplot(log(mydata.mean.crop.1$CROPDMGCOST), main=mymain.crop, xlab=myxlab.crop, ylab=myylab.crop, ylim=myylim.crop)
+
+```
+
+## CONCLUSION #3
+
+In total, 111 event types had both property damage and crop damage.  
+
+The script merged the property damage and crop damage data sets, focusing on common event types. 
+It calculated the number of events by counting the number of rows in the merged data set.  
+
+
+```{r p2mergepropertycrop, echo=TRUE}
+## Merge the property and crop mean data sets and order in descending order by property damage and crop damage
+mydata.mean.merge.nonpeople <- merge(mydata.mean.property.1, mydata.mean.crop.1, by.x="EVTYPE", by.y="EVTYPE")
+mydata.mean.merge.nonpeople <- mydata.mean.merge.nonpeople[with(mydata.mean.merge.nonpeople, order(-PROPDMGCOST, -CROPDMGCOST)), ]
+mydata.mean.merge.nonpeople
+
+## Count the number of rows to calculate the number of event types with both property and crop damage
+mydata.mean.merge.nonpeople.no <- nrow(mydata.mean.merge.nonpeople)
+mydata.mean.merge.nonpeople.no
+```
+ 
+
+## CONCLUSION #4
+
+Storm-related events accounted for many of the events relating to property and crop damage.  
+
+The original data set was titled "Storm Data," but most of the possible event descriptions 
+did not relate specifically to storms.  To see whether any "storms" impacted property or crop 
+damage I searched the event names on each list of events with calculated means of damage.
+
+The script searched the event types for "storm" and calculated the number of events for property 
+and crop damage by counting the number of rows that "storm" in the name.  
+
+
+```{r p2stormdamage, echo=TRUE}
+## Search for property damage event types with "storm"
+mydata.mean.property.storm <- grep("[Ss][Tt][Oo][Rr][Mm]", mydata.mean.property.1$EVTYPE, value=TRUE)
+mydata.mean.property.storm
+
+## Calculate the number of events for property damage with "storm" in the name
+mydata.mean.property.storm.no <- length(grep("[Ss][Tt][Oo][Rr][Mm]", mydata.mean.property.1$EVTYPE, value=TRUE))
+mydata.mean.property.storm.no
+## count of total property events
+mydata.mean.property.1.no
+
+## Search for crop damage event types with "storm"
+mydata.mean.crop.storm <- grep("[Ss][Tt][Oo][Rr][Mm]", mydata.mean.crop.1$EVTYPE, value=TRUE)
+mydata.mean.crop.storm
+             
+## Calculate the number of events for crop damage with "storm" in the name
+mydata.mean.crop.storm.no <- length(grep("[Ss][Tt][Oo][Rr][Mm]", mydata.mean.crop.1$EVTYPE, value=TRUE))
+mydata.mean.crop.storm.no
+## count of total crop events
+mydata.mean.crop.1.no
+```
+
+Out of the events with property damage, `mydata.mean.property.1.no` variable with 
+**`r format(mydata.mean.property.1.no,2)`**  events, **`r format(mydata.mean.property.storm.no,2)`** events were 
+related to storms, based upon the `mydata.mean.property.storm.no` variable.   
+
+Out of the events with crop damage, `mydata.mean.crop.1.no` variable with 
+**`r format(mydata.mean.crop.1.no, 2)`**  events, `r format(mydata.mean.crop.storm.no, 2)`** events were 
+related to storms, based upon the `mydata.mean.crop.storm.no` variable.   
+
+## FINAL CONCLUSION
+
+Eight events had all four factors--human injuries and fatalities, property and crop damage--
+and five of those events were directly related to heat.
+
+The script merged the four mean data sets, looking for event types common to all four data sets.
+
+
+```{r finalmerge, echo=TRUE}
+## Merge four mean data sets into one, with matching on the "event type" EVTYPE field.
+
+mydata.mean.merge.all <- merge(mydata.mean.injuries.1, mydata.mean.fatalities.1, by.x="EVTYPE", by.y="EVTYPE")
+mydata.mean.merge.all <- merge(mydata.mean.merge.all, mydata.mean.property.1, by.x="EVTYPE", by.y="EVTYPE")
+mydata.mean.merge.all <- merge(mydata.mean.merge.all, mydata.mean.crop.1, by.x="EVTYPE", by.y="EVTYPE")
+mydata.mean.merge.all
+
+## Calculate the number of rows of the merged data set to obtain the total count
+mydata.mean.merge.all.no <- nrow(mydata.mean.merge.all)
+mydata.mean.merge.all.no
+```
+
+The script then determined the number of event types that contained "heat."
+
+```{r finalheatcalc, echo=TRUE}
+## Calculate which event types have "heat" in their names
+mydata.mean.merge.all.heat <- grep("[Hh][Ee][Aa][Tt]", mydata.mean.merge.all$EVTYPE, value=TRUE)
+mydata.mean.merge.all.heat
+
+## Calculate the number of event types with "heat" in their names
+mydata.mean.merge.all.heat.no <- length(grep("[Hh][Ee][Aa][Tt]", mydata.mean.merge.all$EVTYPE, value=TRUE))
+mydata.mean.merge.all.heat.no
+```
+
+
+# System Configuration
+
+The following version of R and computer platform generated the code and graphs.
+
+```{r versioninfo, echo=TRUE}
+## Version information
+myrversion <- R.Version()
+myrversion$version.string
+myrversion$platform
+```
+
+The internet connection speed allows sufficient time to download the file. The most time intensive 
+part of the process is loading the data. Limiting the number of columns, or variables, significantly 
+reduced the run-time speed.
+
+# Appendix I:     Data Definitions
+
+### Data definition
+#### Loaded data with crop and property damage calculations.
+
+```{r ddmydata, echo=TRUE}
+str(mydata)
+```
+
+### Data definition
+#### Merged injury and fatality data with common event types
+
+```{r ddmeanmergepeople, echo=TRUE}
+str(mydata.mean.merge.people)
+```
+
+
+### Data definition
+#### Merged crop and property damage data with common event types
+
+```{r ddmeanmergenonpeople, echo=TRUE}
+str(mydata.mean.merge.nonpeople)
+```
+
+### Data definition
+#### Merged data for human fatalities and injuries and property and crop damage with common event types
+
+```{r ddmeanmergeall, echo=TRUE}
+str(mydata.mean.merge.all)
+```
+
+# Appendix II:	Other References
+
+
+"NOAA National Severe Storms Laboratory." NSSL: Severe Weather 101. Accessed January 25, 2015. http://www.nssl.noaa.gov/education/svrwx101/.
+
+The web site lists seven severe storm types:  thunderstorms, tornadoes, floods, lightening, hail, 
+damaging winds and winter weather.
+

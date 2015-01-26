@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Heat and Storms in the United States Negatively </title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Heat and Storms in the United States Negatively </h1>
+
+<h1>Impact Human Life and </h1>
+
+<h1>Cost Billions in Property and Food Loss</h1>
+
+<h3>Johns Hopkins and Coursera</h3>
+
+<h3>Reproducible Research Class</h3>
+
+<h3>Peer Assessment 2</h3>
+
+<h4>January 24, 2015</h4>
+
+<h4>user sdbj2063</h4>
+
+<h1>Synopsis (10 sentences max.)</h1>
+
+<p>By calculating the mean for injuries, fatalities, property damage and crop damage based upon the severe 
+weather event type, it became obvious that global warming is having an adverse impact on 
+human health, property and food sources.</p>
+
+<p>The project used the data set &ldquo;Storm Data&rdquo; from the National Oceanic and Atmospheric Administration (NOAA) 
+for 1950 through November 2011. </p>
+
+<p>The project required developers to determine which types of storm weather events in the United States 
+were the most harmful to &ldquo;population health&rdquo; and which types had the &ldquo;greatest economic consequences.&rdquo;</p>
+
+<p>Regarding the impact on human life, more event types had injuries than deaths, and the largest event type 
+for injuries had almost triple the number of incidents compared to the largest event type for fatalities. </p>
+
+<p>Eleven event types had both injuries and fatalities of more than one person, and heat-related events 
+accounted for a high number of fatalities and injuries.</p>
+
+<p>Regarding economic impact, more event types had property damage than crop damage. </p>
+
+<p>While the largest event type based upon dollars for property damage was greater than the largest event 
+for crop damage, both involved rain or moisture.</p>
+
+<p>Property damage and crop damage occured jointly in 111 event types, and storm-related events accounted 
+for a high number of property and crop damage events.</p>
+
+<p>Finally, eight events had all four factors&ndash;human injuries and fatalities, property and crop damage&ndash;
+and five of those events were directly related to heat.</p>
+
+<h1>Documentation Conventions</h1>
+
+<p>In the <strong>Result</strong> section, each project problem has a heading <strong>Problem</strong>.  </p>
+
+<p>Beneath that are <strong>Questions</strong> that the script uses to address the problem, <strong>CONCLUSIONS</strong> about the 
+data processed for the problem with script and explanation and an <strong>Illustrative Graph</strong> for each problem.</p>
+
+<p>R functions appear in the text blocks the first time as <em>function-name</em> in <em>italics</em> followed by 
+&ldquo;function.&rdquo; Subsequent references use the format <em>function-name()</em>.</p>
+
+<p>Calculated variable values are displayed within the code block results and within text blocks as 
+<code>variable-name</code> &ldquo;variable.&rdquo;  </p>
+
+<p>Field or variable names within an R data frame appear within the text blocks as <strong>field-name</strong> 
+in bold followed by &ldquo;field.&rdquo;</p>
+
+<h1>Data Processing</h1>
+
+<h2>Loading the Data</h2>
+
+<p>Several libraries were necessary to complete the aggregate computations and develop the boxplots.</p>
+
+<pre><code class="r">## Set up libraries
+
+library(base)
+library(utils)
+library(graphics)
+library(grDevices)
+library(stringr)
+library(plyr)
+library(lattice)
+</code></pre>
+
+<p>The script downloads the *.bz2 archive and loads the data into a data frame, eliminating 
+unnecessary columns.  </p>
+
+<pre><code class="r">## Download the zip file and overwrite an existing file
+myfile &lt;- &quot;repdata_data_StormData.csv.bz2&quot;
+mypath &lt;- &quot;http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2FStormData.csv.bz2&quot;
+
+download.file(mypath, myfile, quiet = FALSE, mode = &quot;wb&quot;)
+</code></pre>
+
+<p>The usable fields included the event type, <strong>EVTYPE</strong> field; counts for injuries and fatalities, 
+<strong>INJURIES</strong> and <strong>FATALITIES</strong> fields; and total dollar amounts per event for property 
+damage and crop damage, <strong>PROPDMG</strong>, <strong>PROPDMGEXP</strong>, <strong>CROPDMG</strong> and <strong>CROPDMGEXP</strong> fields.<br/>
+The two <strong>EXP</strong> fields are the indicators for the demonation of the numeric value, such as &ldquo;K&rdquo; 
+for thousands. <strong>EVTYPE</strong> became a character string to ease searching.  </p>
+
+<pre><code class="r">## Unzip the file and load seven data columns into R
+mycolclasses &lt;- c(rep(&quot;NULL&quot;, 7), &quot;factor&quot;, rep(&quot;NULL&quot;, 14), rep(&quot;numeric&quot;, 3), &quot;factor&quot;, &quot;numeric&quot;, &quot;factor&quot;, rep(&quot;NULL&quot;, 9))
+
+mydata &lt;- read.csv(bzfile(myfile), colClasses = mycolclasses)
+
+## make EVTYPE character for string searching purposes
+mydata$EVTYPE &lt;- as.character(mydata$EVTYPE)
+</code></pre>
+
+<p>The resulting format is small and better prepared for manipulation.</p>
+
+<pre><code class="r">str(mydata)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    902297 obs. of  7 variables:
+##  $ EVTYPE    : chr  &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; ...
+##  $ FATALITIES: num  0 0 0 0 0 0 0 0 1 0 ...
+##  $ INJURIES  : num  15 0 2 2 2 6 1 0 14 0 ...
+##  $ PROPDMG   : num  25 2.5 25 2.5 2.5 2.5 2.5 2.5 25 25 ...
+##  $ PROPDMGEXP: Factor w/ 19 levels &quot;&quot;,&quot;-&quot;,&quot;?&quot;,&quot;+&quot;,..: 17 17 17 17 17 17 17 17 17 17 ...
+##  $ CROPDMG   : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ CROPDMGEXP: Factor w/ 9 levels &quot;&quot;,&quot;?&quot;,&quot;0&quot;,&quot;2&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+</code></pre>
+
+<h2>Preprocessing Property and Crop Damage Data</h2>
+
+<p>To standardize the approach to answering the questions, I chose to find the average of the values fields 
+for each event type using the <strong>EVTYPE</strong> field. While the raw data was suitable for human fatalities and 
+injuries, the property and crop damage figures needed preprocessing to achieve a usable number.</p>
+
+<p>The original data set contained two fields for the property damage, a numerical figure <strong>PROPDMG</strong> and a 
+character field <strong>PROPDMGEXP</strong> indicating what U.S. Dollar amount should be included. According to the 
+NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, &ldquo;STORM DATA PREPARATION,&rdquo;  &ldquo;K&rdquo; stood for 
+thousands of dollars, &ldquo;M&rdquo; stood for millions and &ldquo;B&rdquo; stood for billions. The character field contained 
+other values the project documentation did not acknowledge, so dollar calculations ignored those values.   </p>
+
+<pre><code class="r">## Obtain list of demoninator values for property and crop damage
+mydamage.property.u &lt;- as.character(unique(mydata$PROPDMGEXP))
+mydamage.crop.u &lt;- as.character(unique(mydata$CROPDMGEXP))
+
+mydamage.property.u
+</code></pre>
+
+<pre><code>##  [1] &quot;K&quot; &quot;M&quot; &quot;&quot;  &quot;B&quot; &quot;m&quot; &quot;+&quot; &quot;0&quot; &quot;5&quot; &quot;6&quot; &quot;?&quot; &quot;4&quot; &quot;2&quot; &quot;3&quot; &quot;h&quot; &quot;7&quot; &quot;H&quot; &quot;-&quot;
+## [18] &quot;1&quot; &quot;8&quot;
+</code></pre>
+
+<pre><code class="r">mydamage.crop.u 
+</code></pre>
+
+<pre><code>## [1] &quot;&quot;  &quot;M&quot; &quot;K&quot; &quot;m&quot; &quot;B&quot; &quot;?&quot; &quot;0&quot; &quot;k&quot; &quot;2&quot;
+</code></pre>
+
+<p>Once the script identified the denominator factors, it added two fields to the original data set, one for 
+the calculated the total dollar cost for property damage and the second for crop damage.</p>
+
+<pre><code class="r">## Add new calculated total cost fields for property damage and crop damage.
+mydata$PROPDMGCOST &lt;- 0
+mydata$CROPDMGCOST &lt;- 0    
+</code></pre>
+
+<p>By multiplying the property number <strong>PROPDMG</strong> by the appropriate operator based upon the denominator in 
+<strong>PROPDMGEXP</strong> the script calculated the total dollar amount for each event.</p>
+
+<pre><code class="r">## Calculate total cost PROPDMGCOST
+## Use three values identified in paperwork, K, M and B
+## Multiple PROPDMG &gt; 0 by appropriate valuation
+
+## Thousands using K
+mydata[mydata$PROPDMGEXP %in% c(mydamage.property.u[1]) &amp; mydata$PROPDMG &gt; 0, 8 ] &lt;- as.numeric(mydata[mydata$PROPDMGEXP %in% c
+(mydamage.property.u[1]) &amp; mydata$PROPDMG &gt; 0, 4 ] * 1000)
+
+## Millions using M
+mydata[mydata$PROPDMGEXP %in% c(mydamage.property.u[2]) &amp; mydata$PROPDMG &gt; 0, 8 ] &lt;- as.numeric(mydata[mydata$PROPDMGEXP %in% c
+(mydamage.property.u[2]) &amp; mydata$PROPDMG &gt; 0, 4 ] * 1000000)
+
+## Billions using B
+mydata[mydata$PROPDMGEXP %in% c(mydamage.property.u[4]) &amp; mydata$PROPDMG &gt; 0, 8 ] &lt;- as.numeric(mydata[mydata$PROPDMGEXP %in% c
+(mydamage.property.u[4]) &amp; mydata$PROPDMG &gt; 0, 4 ] * 1000000000)
+</code></pre>
+
+<p>The original data set contained two fields for the crop damage, a numerical figure <strong>CROPDMG</strong> and a 
+character field <strong>CROPDMGEXP</strong> indicating what U.S. Dollar amount should be included. According to the 
+NATIONAL WEATHER SERVICE INSTRUCTION 10-1605, &ldquo;STORM DATA PREPARATION,&rdquo;  &ldquo;K&rdquo; stood for 
+thousands of dollars, &ldquo;M&rdquo; stood for millions and &ldquo;B&rdquo; stood for billions. The character field contained 
+other values the project documentation did not acknowledge, so dollar calculations ignored those values.   </p>
+
+<p>By multiplying the property number <strong>CROPDMG</strong> by the appropriate operator based upon the denominator in 
+<strong>CROPDMGEXP</strong> the script calculated the total dollar amount for each event.</p>
+
+<pre><code class="r">## Calculate total cost CROPDMGCOST
+## Use three values identified in paperwork, K, M and B
+## Multiple CROPDMG &gt; 0 by appropriate valuation
+
+## Thousands using K
+mydata[mydata$CROPDMGEXP %in% c(mydamage.crop.u[3]) &amp; mydata$CROPDMG &gt; 0, 9 ] &lt;- as.numeric(mydata[mydata$CROPDMGEXP %in% c
+(mydamage.crop.u[3]) &amp; mydata$CROPDMG &gt; 0, 6 ] * 1000)
+
+## Millions using M
+mydata[mydata$CROPDMGEXP %in% c(mydamage.crop.u[2]) &amp; mydata$CROPDMG &gt; 0, 9 ] &lt;- as.numeric(mydata[mydata$CROPDMGEXP %in% c
+(mydamage.crop.u[2]) &amp; mydata$CROPDMG &gt; 0, 6 ] * 1000000)
+
+## Billions using B
+mydata[mydata$CROPDMGEXP %in% c(mydamage.crop.u[5]) &amp; mydata$CROPDMG &gt; 0, 9 ] &lt;- as.numeric(mydata[mydata$CROPDMGEXP %in% c
+(mydamage.crop.u[5]) &amp; mydata$CROPDMG &gt; 0, 6 ] * 1000000000)
+</code></pre>
+
+<p>The final step created a new data set with damage values greater than zero (0).</p>
+
+<pre><code class="r">## Create new data set. 
+## Keep rows with property or crop damage amounts greater than 0 to reduce the size of the data set.
+
+mydata.2 &lt;- mydata[mydata$PROPDMGCOST &gt; 0 | mydata$CROPDMGCOST &gt; 0, c(1,8,9)]
+</code></pre>
+
+<p>More data calculations and instructions pertaining to each question and the strategy to reach conclusions<br/>
+are in the <strong>Results</strong> section of this document.  </p>
+
+<h1>Results</h1>
+
+<p>The results are divided into two sections, one for each of the problems presented in the project. 
+Each section has one two-boxplot layout to show the range of impact for each category&ndash;
+human injuries and fatalities and damage to property and crops. The final conclusion examines the entire 
+data set of mean values to identify what event types have all four categories&ndash;injuries 
+and fatalities for humans, property damage and crop damage.  </p>
+
+<h2>Summary of Results</h2>
+
+<p>I used the mean, or average, of each of the four key numeric fields&ndash;number of fatalities and number of 
+injuries for human impact and the total cost of property damage and total cost of crop 
+damage for economic impact&ndash;grouped by the type of event to reach basic conclusions about the impact 
+of severe weather events on the United States of America&#39;s population and economy.  </p>
+
+<p>While all the events could have a potential economic impact for human beings, I focused on direct 
+affects to life and limb for humans.  </p>
+
+<p>Pertaining to events harmful to human population health:<br/>
+1. More event types resulted in injuries to human beings than deaths.<br/>
+2. The largest event type for injuries was almost triple the number of incidents for the largest 
+event type for fatalities.<br/>
+3. Eleven event types had both injuries and fatalities of more than one person.<br/>
+4. Heat-related events accounted for a high number of both fatalities and injuries.  </p>
+
+<p>Pertaining to events having the greatest economic impact:<br/>
+1. More event types reesult in property damage than crop damage.<br/>
+2. The largest event type for property damage has more damage than the largest event for crop damage, 
+but both involve rain or moisture.<br/>
+3. In total, 111 event types have both property damage and crop damage.<br/>
+4. Storm-related events accounted for a high number of events with property or crop damage.  </p>
+
+<p>Concluding finding:<br/>
+Eight events had all four factors&ndash;human injuries and fatalities, property and crop damage&ndash;
+and five of those events were directly related to heat.  </p>
+
+<h2>Problem One:  Across the U.S., which event types were most harmful to population health?</h2>
+
+<p>The original data set recorded two variables with data pertinent to human health&ndash;injuries and 
+fatalities. To address this problem, I focused on calculating the mean for each event type for 
+injuries and fatalities using the <strong>INJURIES</strong> field, <strong>FATALITIES</strong> field and <strong>EVTYPE</strong> field.  </p>
+
+<h3>QUESTION: What was the mean number of injuries to humans based upon event?</h3>
+
+<p>The strategy was to calculate the mean number of injuries for each event type and limit the data set 
+to events with more than one occurrence. Original examination of the data showed a plethera of events 
+with one occurrence. The final step was to order the data in descending order based upon the number 
+of injuries.  </p>
+
+<pre><code class="r">## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.injuries &lt;- aggregate(INJURIES ~ EVTYPE, data = mydata, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.injuries.1 &lt;- mydata.mean.injuries[mydata.mean.injuries$INJURIES &gt; 1,]
+
+## Order the data in descending order based upon the mean number injuries per event type.
+mydata.mean.injuries.1 &lt;- mydata.mean.injuries.1[with(mydata.mean.injuries.1, order(-INJURIES)), ]
+</code></pre>
+
+<p>The resulting data set showed that the mean number of injuries was no more than 70 and most were below 10.  </p>
+
+<pre><code class="r">## List event types in descending order based upon the mean number of injuries
+mydata.mean.injuries.1
+</code></pre>
+
+<pre><code>##                      EVTYPE  INJURIES
+## 277               Heat Wave 70.000000
+## 851   TROPICAL STORM GORDON 43.000000
+## 954              WILD FIRES 37.500000
+## 821           THUNDERSTORMW 27.000000
+## 366      HIGH WIND AND SEAS 20.000000
+## 656         SNOW/HIGH WINDS 18.000000
+## 224         GLAZE/ICE STORM 15.000000
+## 279       HEAT WAVE DROUGHT 15.000000
+## 973 WINTER STORM HIGH WINDS 15.000000
+## 411       HURRICANE/TYPHOON 14.488636
+## 979      WINTER WEATHER MIX 11.333333
+## 142            EXTREME HEAT  7.045455
+## 524  NON-SEVERE WIND DAMAGE  7.000000
+## 222                   GLAZE  6.750000
+## 877                 TSUNAMI  6.450000
+## 976           WINTER STORMS  5.666667
+## 838              TORNADO F2  5.333333
+## 134      EXCESSIVE RAINFALL  5.250000
+## 943      WATERSPOUT/TORNADO  5.250000
+## 278               HEAT WAVE  4.175676
+## 846     Torrential Rainfall  4.000000
+## 130          EXCESSIVE HEAT  3.888558
+## 275                    HEAT  2.737940
+## 501            MIXED PRECIP  2.600000
+## 487           MARINE MISHAP  2.500000
+## 417                     ICE  2.245902
+## 320       Heavy snow shower  2.000000
+## 331          HEAVY SNOW/ICE  2.000000
+## 395         HIGH WINDS/SNOW  2.000000
+## 429   ICE STORM/FLASH FLOOD  2.000000
+## 484         Marine Accident  2.000000
+## 594              ROGUE WAVE  2.000000
+## 934            WARM WEATHER  2.000000
+## 646             SNOW SQUALL  1.842105
+## 29                BLACK ICE  1.714286
+## 596              ROUGH SEAS  1.666667
+## 834                 TORNADO  1.506067
+## 754     THUNDERSTORM  WINDS  1.428571
+## 188                     FOG  1.364312
+## 435               ICY ROADS  1.107143
+## 44             BLOWING SNOW  1.083333
+## 117              DUST STORM  1.030445
+</code></pre>
+
+<h3>QUESTION: What was the mean number of fatalities for humans based upon event?</h3>
+
+<p>The strategy was to calculate the mean number of fatalities for each event type and limit the data set 
+to events with more than one occurrence. Original examination of the data showed a plethera of events 
+with one occurrence. The final step was to order the data in descending order based upon the number 
+of fatalities.  </p>
+
+<pre><code class="r">## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.fatalities &lt;- aggregate(FATALITIES ~ EVTYPE, data = mydata, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.fatalities.1 &lt;- mydata.mean.fatalities[mydata.mean.fatalities$FATALITIES &gt; 1,]
+
+## Order the data in descending order based upon the mean number of fatalities per event type.
+mydata.mean.fatalities.1 &lt;- mydata.mean.fatalities.1[with(mydata.mean.fatalities.1, order(-FATALITIES)), ]
+</code></pre>
+
+<p>The resulting data set showed that most of the events had a mean number of fatalities below 10.  </p>
+
+<pre><code class="r">## List event types in descending order based upon the mean number of fatalities
+mydata.mean.fatalities.1
+</code></pre>
+
+<pre><code>##                         EVTYPE FATALITIES
+## 842 TORNADOES, TSTM WIND, HAIL  25.000000
+## 72               COLD AND SNOW  14.000000
+## 851      TROPICAL STORM GORDON   8.000000
+## 580      RECORD/EXCESSIVE HEAT   5.666667
+## 142               EXTREME HEAT   4.363636
+## 279          HEAT WAVE DROUGHT   4.000000
+## 373             HIGH WIND/SEAS   4.000000
+## 487              MARINE MISHAP   3.500000
+## 976              WINTER STORMS   3.333333
+## 340        Heavy surf and wind   3.000000
+## 366         HIGH WIND AND SEAS   3.000000
+## 596                 ROUGH SEAS   2.666667
+## 280                 HEAT WAVES   2.500000
+## 588    RIP CURRENTS/HEAVY SURF   2.500000
+## 278                  HEAT WAVE   2.324324
+## 888  UNSEASONABLY WARM AND DRY   2.230769
+## 410  HURRICANE OPAL/HIGH WINDS   2.000000
+## 877                    TSUNAMI   1.650000
+## 307                 HEAVY SEAS   1.500000
+## 415       Hypothermia/Exposure   1.333333
+## 77                COLD WEATHER   1.250000
+## 275                       HEAT   1.221643
+## 130             EXCESSIVE HEAT   1.134088
+</code></pre>
+
+<h2>CONCLUSION #1</h2>
+
+<p>More event types resulted in injuries to human beings than deaths.  </p>
+
+<p>The script counted the number of rows in the respective data sets for injuries and fatalities 
+to obtain the total number of event types for each indicent category.  </p>
+
+<pre><code class="r">## Record the number of event types for injuries
+mydata.mean.injuries.1.no &lt;- nrow(mydata.mean.injuries.1)
+mydata.mean.injuries.1.no
+</code></pre>
+
+<pre><code>## [1] 42
+</code></pre>
+
+<pre><code class="r">## Record the number of event types for fatalities
+mydata.mean.fatalities.1.no &lt;- nrow(mydata.mean.fatalities.1)
+mydata.mean.fatalities.1.no
+</code></pre>
+
+<pre><code>## [1] 23
+</code></pre>
+
+<h2>CONCLUSION #2</h2>
+
+<p>The largest event type for injuries was almost triple the number of incidents for the largest 
+event type for fatalities.   </p>
+
+<p>The script collected the first value in the ordered data sets for injuries and fatalities, respectively.  </p>
+
+<pre><code class="r">## Record the highest injury event type
+mydata.mean.injuries.1.high &lt;- mydata.mean.injuries.1[1,]
+mydata.mean.injuries.1.high
+</code></pre>
+
+<pre><code>##        EVTYPE INJURIES
+## 277 Heat Wave       70
+</code></pre>
+
+<pre><code class="r">## Record the highest fatality event type
+mydata.mean.fatalities.1.high &lt;- mydata.mean.fatalities.1[1,]
+mydata.mean.fatalities.1.high
+</code></pre>
+
+<pre><code>##                         EVTYPE FATALITIES
+## 842 TORNADOES, TSTM WIND, HAIL         25
+</code></pre>
+
+<h2>Illustrative Graph</h2>
+
+<p>The side-by-side boxplot graphs showed the mean number of injuries and fatalities on the same scale. 
+The graph marked the box boundaries for the 1st through 3rd quartiles. Outliers appeared as circles.  </p>
+
+<pre><code class="r">## Set graph properties for property and crop damage
+mymain.injuries &lt;- &quot;Mean Number of Injuries&quot;
+myxlab.injuries &lt;- &quot;1st Quartile to 3rd Quartile Box&quot;
+myylab.injuries &lt;- &quot;Mean Number&quot;
+myylim.injuries &lt;- c(0,mydata.mean.injuries.1.high[1,2])
+mymain.fatalities &lt;- &quot;Mean Number of Fatalities&quot;
+myxlab.fatalities &lt;- &quot;1st Quartile to 3rd Quartile Box&quot;
+myylab.fatalities &lt;- &quot;Mean Number&quot;
+myylim.fatalities &lt;- c(0,mydata.mean.injuries.1.high[1,2])
+
+## Create one row, two column layout for the injuries and fatalities boxplots, respectively
+par(mfrow = c(1, 2))
+
+boxplot(mydata.mean.injuries.1$INJURIES, main=mymain.injuries, xlab=myxlab.injuries, ylab=myylab.injuries, ylim=myylim.injuries)
+
+boxplot(mydata.mean.fatalities.1$FATALITIES, main=mymain.fatalities, xlab=myxlab.fatalities, ylab=myylab.fatalities, 
+ylim=myylim.fatalities)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAolBMVEX9/v0AAAAAADkAAGUAOTkAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OQA5OWU5OY85ZmU5ZrU5j485j9plAABlADllAGVlOQBlZgBlZjllZmVlj49ltbVltf2POQCPOTmPOWWPjzmPtY+P27WP29qP2/21ZgC1tWW124+1/rW1/tq1/v3ajzna24/a/rXa/tra/v39tWX9tY/924/9/rX9/tr9/v3b82XEAAAANnRSTlP//////////////////////////////////////////////////////////////////////wChj04xAAAACXBIWXMAAAsSAAALEgHS3X78AAAROklEQVR4nO2dDXvixhWFI7t1cNJuW9hNm9beNglkU5PEFMz//2udGY2EMPrWGWnu3PM+m9hgONLRK6SRDdJXZ6KSr5aeAbIMFK8UilcKxSuF4pVC8UqheKVQvFIoXikUrxSKVwrFK4XilULxSqF4pVC8UiheKRSvFIpXCsUrheKVQvFKoXilULxSKF4p48S/PWfZ2nzdZ9nDa/tDT5vsyT7h/qUhqeEHVxwfs7utC6s8+upG411Ilqptp2t5uvxod/nels6Lmzt7L4Gx4u/+ZKrbGeqxBNwjJy2Bne8cWGwXS9W+Fb/LrsXf3NnJaPH/MFM7bf7yaJfA3s/UwXw1q6hp9XOW+bkxS8C8SmxRV/a0eXg9ZF8/mx/v7ZPyx7rF6FNsdr6i53et897uIbZjme5v5Jn5s350y6CYHfOCyaArylK1L6tJPin3k1UxXf+K/6+789R3CYwW/8Pjk5nyP+0S2LnVce3K2ln1K+jKL4H7v+ftK0ugwN6Z5U8qUy59/V2r9+J9+jvx9jG/2drvZ2dUw6hql+L9pH73jvOIW/F9lsBo8T9u1uf9/RezBI6PlY2aV7M2SyefoLnjy+P63RK4fzHr4tNp41ZeO4N32zLF3JMvO7O+uvXZ/K+6qS/T34tf5T8vg9w3UJaq/X6VerlaIOU+3t7ZewmMFr/dmRXv4dfHck22mym7itkObs7LJfCyu/vpegkUL1e7BNyoJHsqU9yzHQdXdW/qXIv36e839dv852WQW9/Rm/pFalfE55PyP8lv3IjvtQTGi9/f/7JZH6tLwO5R8iXg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" alt="plot of chunk p1plotinjuriesfatalities"/> </p>
+
+<h2>CONCLUSION #3</h2>
+
+<p>Eleven event types had both injuries and fatalities of more than one person.  </p>
+
+<p>The script merged the injury and fatality data sets, focusing on common event types. It calculated 
+the number of events by counting the number of rows in the merged data set.   </p>
+
+<pre><code class="r">## Merge the injury and fatality mean data sets and order in descending order by injuries and fatalities 
+mydata.mean.merge.people &lt;- merge(mydata.mean.injuries.1, mydata.mean.fatalities.1, by.x=&quot;EVTYPE&quot;, by.y=&quot;EVTYPE&quot;)
+mydata.mean.merge.people &lt;- mydata.mean.merge.people[with(mydata.mean.merge.people, order(-INJURIES, -FATALITIES)), ]
+mydata.mean.merge.people
+</code></pre>
+
+<pre><code>##                   EVTYPE  INJURIES FATALITIES
+## 9  TROPICAL STORM GORDON 43.000000   8.000000
+## 6     HIGH WIND AND SEAS 20.000000   3.000000
+## 5      HEAT WAVE DROUGHT 15.000000   4.000000
+## 2           EXTREME HEAT  7.045455   4.363636
+## 10               TSUNAMI  6.450000   1.650000
+## 11         WINTER STORMS  5.666667   3.333333
+## 4              HEAT WAVE  4.175676   2.324324
+## 1         EXCESSIVE HEAT  3.888558   1.134088
+## 3                   HEAT  2.737940   1.221643
+## 7          MARINE MISHAP  2.500000   3.500000
+## 8             ROUGH SEAS  1.666667   2.666667
+</code></pre>
+
+<pre><code class="r">## Count the number of rows to calculate the number of event types with both injuries and fatalities
+mydata.mean.merge.people.no &lt;- nrow(mydata.mean.merge.people)
+mydata.mean.merge.people.no
+</code></pre>
+
+<pre><code>## [1] 11
+</code></pre>
+
+<h2>CONCLUSION #4</h2>
+
+<p>Heat-related events accounted for a high number of fatalities and injuries.  </p>
+
+<p>The script searched the event types for &ldquo;heat&rdquo; and calculated the number of events for injuries 
+and fatalities by counting the number of rows that met the criteria.  </p>
+
+<pre><code class="r">## Search for injury event types with &quot;heat&quot;
+mydata.mean.injuries.heat &lt;- grep(&quot;[Hh][Ee][Aa][Tt]&quot;, mydata.mean.injuries.1$EVTYPE, value=TRUE)
+mydata.mean.injuries.heat
+</code></pre>
+
+<pre><code>## [1] &quot;Heat Wave&quot;         &quot;HEAT WAVE DROUGHT&quot; &quot;EXTREME HEAT&quot;     
+## [4] &quot;HEAT WAVE&quot;         &quot;EXCESSIVE HEAT&quot;    &quot;HEAT&quot;
+</code></pre>
+
+<pre><code class="r">## Calculate the number of events for injuries with &quot;heat&quot; in the name             
+mydata.mean.injuries.heat.no &lt;- length(grep(&quot;[Hh][Ee][Aa][Tt]&quot;, mydata.mean.injuries.1$EVTYPE, value=TRUE))
+mydata.mean.injuries.heat.no
+</code></pre>
+
+<pre><code>## [1] 6
+</code></pre>
+
+<pre><code class="r">## Count of total injuries
+mydata.mean.injuries.1.no
+</code></pre>
+
+<pre><code>## [1] 42
+</code></pre>
+
+<pre><code class="r">## Search for fatality event types with &quot;heat&quot;
+mydata.mean.fatalities.heat &lt;- grep(&quot;[Hh][Ee][Aa][Tt]&quot;, mydata.mean.fatalities.1$EVTYPE, value=TRUE)
+mydata.mean.fatalities.heat
+</code></pre>
+
+<pre><code>## [1] &quot;RECORD/EXCESSIVE HEAT&quot; &quot;EXTREME HEAT&quot;          &quot;HEAT WAVE DROUGHT&quot;    
+## [4] &quot;HEAT WAVES&quot;            &quot;HEAT WAVE&quot;             &quot;HEAT&quot;                 
+## [7] &quot;EXCESSIVE HEAT&quot;
+</code></pre>
+
+<pre><code class="r">## Calculate the number of events for fatalities with &quot;heat&quot; in the name
+mydata.mean.fatalities.heat.no &lt;- length(grep(&quot;[Hh][Ee][Aa][Tt]&quot;, mydata.mean.fatalities.1$EVTYPE, value=TRUE))
+mydata.mean.fatalities.heat.no
+</code></pre>
+
+<pre><code>## [1] 7
+</code></pre>
+
+<pre><code class="r">## Count of total fatalities
+mydata.mean.fatalities.1.no
+</code></pre>
+
+<pre><code>## [1] 23
+</code></pre>
+
+<p>Out of the events with injuries, <code>mydata.mean.injuries.1.no</code> variable with 
+<strong>42</strong>  events, <strong>6</strong> events were 
+related to heat, based upon the <code>mydata.mean.injuries.heat.no</code> variable.   </p>
+
+<p>Out of the events with fatalities, <code>mydata.mean.fatalities.1.no</code> variable with 
+<strong>23</strong>  events, <strong>7</strong> events were 
+related to heat, based upon the <code>mydata.mean.fatalities.heat.no</code> variable.   </p>
+
+<h2>Problem 2: Across the U.S., which types of events had the greatest economic consequences?</h2>
+
+<p>To address this problem, I focused on calculating the mean for each event type for property damage 
+and crop damage. The numbers were so large as to be meaningless in a graph, so the illustrative 
+graph uses the log scale.  </p>
+
+<h3>QUESTION: What was the mean dollar amount of property damage based upon event type?</h3>
+
+<p>The strategy was to calculate the mean amount for each event type and limit the data set to 
+events with more than zero occurrences. The final step was to order the data in descending order 
+based upon dollar amount.  </p>
+
+<pre><code class="r">## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.property &lt;- aggregate(PROPDMGCOST ~ EVTYPE, data = mydata.2, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.property.1 &lt;- mydata.mean.property[mydata.mean.property$PROPDMGCOST != 0,]
+
+## Order the data in descending order based upon the total cost per event type.
+mydata.mean.property.1 &lt;- mydata.mean.property.1[with(mydata.mean.property.1, order(-PROPDMGCOST)), ]
+</code></pre>
+
+<p>The resulting data set, below, ordered from largest dollar amount descending, was exhausive. Further processing was necessary.   </p>
+
+<pre><code class="r">mydata.mean.property.1
+</code></pre>
+
+<pre><code>##                             EVTYPE  PROPDMGCOST
+## 139      HEAVY RAIN/SEVERE WEATHER 2.500000e+09
+## 355     TORNADOES, TSTM WIND, HAIL 1.600000e+09
+## 193              HURRICANE/TYPHOON 9.900834e+08
+## 191                 HURRICANE OPAL 4.504066e+08
+## 295                    STORM SURGE 2.504251e+08
+## 265            SEVERE THUNDERSTORM 1.721943e+08
+## 406                     WILD FIRES 1.560250e+08
+## 192      HURRICANE OPAL/HIGH WINDS 1.000000e+08
+## 296               STORM SURGE/TIDE 9.874868e+07
+## 185                      HURRICANE 9.649040e+07
+## 127                      HAILSTORM 8.033333e+07
+## 383                        TYPHOON 6.669222e+07
+## 420        WINTER STORM HIGH WINDS 6.000000e+07
+## 187                HURRICANE EMILY 5.000000e+07
+## 258                    RIVER FLOOD 4.829194e+07
+## 188                 HURRICANE ERIN 4.301667e+07
+## 228                    MAJOR FLOOD 3.500000e+07
+## 410                      WILDFIRES 3.350000e+07
+## 182                HIGH WINDS/COLD 2.210000e+07
+## 259                 River Flooding 2.123100e+07
+## 358                 TROPICAL STORM 1.892848e+07
+## 64               FLASH FLOOD/FLOOD 1.702812e+07
+## 17       COASTAL  FLOODING/EROSION 1.500000e+07
+## 70                           FLOOD 1.438521e+07
+## 252                    RECORD COLD 1.400000e+07
+## 137           Heavy Rain/High Surf 1.350000e+07
+## 381                        TSUNAMI 1.029014e+07
+## 71              FLOOD &amp; HEAVY RAIN 1.000000e+07
+## 407               WILD/FOREST FIRE 9.293590e+06
+## 402             WATERSPOUT/TORNADO 8.518333e+06
+## 47              Erosion/Cstl Flood 8.100000e+06
+## 179         HIGH WINDS HEAVY RAINS 7.500000e+06
+## 23        COASTAL FLOODING/EROSION 6.676667e+06
+## 409                       WILDFIRE 6.124825e+06
+## 202                      ICE STORM 5.914434e+06
+## 19                   Coastal Flood 5.476250e+06
+## 82                    FOREST FIRES 5.000000e+06
+## 138           HEAVY RAIN/LIGHTNING 5.000000e+06
+## 151  HEAVY SNOW/BLIZZARD/AVALANCHE 5.000000e+06
+## 152       HEAVY SNOW/FREEZING RAIN 5.000000e+06
+## 158                 HEAVY SNOWPACK 5.000000e+06
+## 181       HIGH WINDS/COASTAL FLOOD 5.000000e+06
+## 196                   ICE AND SNOW 5.000000e+06
+## 224                 LIGHTNING FIRE 5.000000e+06
+## 359         TROPICAL STORM ALBERTO 5.000000e+06
+## 419                   WINTER STORM 4.818802e+06
+## 3                        TSTM WIND 4.050000e+06
+## 38                         DROUGHT 3.932729e+06
+## 203               ICE/STRONG WINDS 3.500000e+06
+## 12                        BLIZZARD 3.094901e+06
+## 293              SNOWMELT FLOODING 2.525000e+06
+## 22                COASTAL FLOODING 2.302555e+06
+## 362           TROPICAL STORM JERRY 2.300000e+06
+## 79                        FLOODING 2.042547e+06
+## 34                 DAMAGING FREEZE 2.000000e+06
+## 80                          FLOODS 2.000000e+06
+## 210                      LANDSLIDE 1.717439e+06
+## 147    HEAVY SNOW AND STRONG WINDS 1.700000e+06
+## 167                      HIGH SURF 1.599554e+06
+## 209                LAKESHORE FLOOD 1.508000e+06
+## 153  HEAVY SNOW/HIGH WINDS &amp; FLOOD 1.500000e+06
+## 20                   COASTAL FLOOD 1.476184e+06
+## 349                        TORNADO 1.446723e+06
+## 8           ASTRONOMICAL HIGH TIDE 1.178125e+06
+## 200               ICE JAM FLOODING 1.103200e+06
+## 21                Coastal Flooding 1.054167e+06
+## 66                  FLASH FLOODING 1.050388e+06
+## 178                     HIGH WINDS 1.002181e+06
+## 73                     FLOOD/FLASH 1.000000e+06
+## 94                    Frost/Freeze 1.000000e+06
+## 267           SEVERE THUNDERSTORMS 1.000000e+06
+## 413                  WIND AND WAVE 1.000000e+06
+## 170                      HIGH WIND 9.850554e+05
+## 250                           RAIN 8.833417e+05
+## 130                      HEAT WAVE 8.716708e+05
+## 260                 RIVER FLOODING 8.449167e+05
+## 352                     TORNADO F2 8.000000e+05
+## 58                     FLASH FLOOD 7.824331e+05
+## 18                 COASTAL EROSION 7.660000e+05
+## 145                     HEAVY SNOW 7.502728e+05
+## 69                    FLASH FLOODS 7.273750e+05
+## 53                    EXTREME COLD 6.842162e+05
+## 135                     HEAVY RAIN 6.727210e+05
+## 142                    HEAVY RAINS 6.465816e+05
+## 74               FLOOD/FLASH FLOOD 6.351788e+05
+## 195                            ICE 6.327500e+05
+## 113                           HAIL 6.060876e+05
+## 136           HEAVY RAIN AND FLOOD 6.000000e+05
+## 257         RIVER AND STREAM FLOOD 6.000000e+05
+## 286             SNOW/FREEZING RAIN 6.000000e+05
+## 351                     TORNADO F1 5.925000e+05
+## 162           HEAVY SURF/HIGH SURF 5.805882e+05
+## 212                      Landslump 5.700000e+05
+## 174               HIGH WIND DAMAGE 5.500000e+05
+## 143           HEAVY RAINS/FLOODING 5.400000e+05
+## 32                       DAM BREAK 5.010000e+05
+## 13           BLIZZARD/WINTER STORM 5.000000e+05
+## 25                   COASTAL SURGE 5.000000e+05
+## 27                            COLD 5.000000e+05
+## 62                    FLASH FLOOD/ 5.000000e+05
+## 68  FLASH FLOODING/THUNDERSTORM WI 5.000000e+05
+## 78               FLOOD/RIVER FLOOD 5.000000e+05
+## 96                   FROST\\FREEZE 5.000000e+05
+## 132                HEAVY LAKE SNOW 5.000000e+05
+## 134            HEAVY PRECIPITATION 5.000000e+05
+## 141                HEAVY RAIN/SNOW 5.000000e+05
+## 157        HEAVY SNOW/WINTER STORM 5.000000e+05
+## 177                 HIGH WIND/SEAS 5.000000e+05
+## 189                HURRICANE FELIX 5.000000e+05
+## 190               HURRICANE GORDON 5.000000e+05
+## 254                    RECORD SNOW 5.000000e+05
+## 269                SLEET/ICE STORM 5.000000e+05
+## 277             SNOW AND ICE STORM 5.000000e+05
+## 285                      SNOW/COLD 5.000000e+05
+## 287                SNOW/HEAVY SNOW 5.000000e+05
+## 361          TROPICAL STORM GORDON 5.000000e+05
+## 421                  WINTER STORMS 5.000000e+05
+## 237               MICROBURST WINDS 4.500000e+05
+## 54         EXTREME COLD/WIND CHILL 4.324000e+05
+## 360            TROPICAL STORM DEAN 4.000000e+05
+## 353                     TORNADO F3 3.625000e+05
+## 244                       MUDSLIDE 3.187500e+05
+## 88                    FREEZING FOG 3.117143e+05
+## 48                  EXCESSIVE HEAT 3.101480e+05
+## 273                           SNOW 3.075531e+05
+## 416                     WIND STORM 3.000000e+05
+## 291                     SNOW/SLEET 2.700000e+05
+## 169                     HIGH WATER 2.525000e+05
+## 126                     HAIL/WINDS 2.500000e+05
+## 396                   VOLCANIC ASH 2.500000e+05
+## 90                   FREEZING RAIN 2.458030e+05
+## 67            FLASH FLOODING/FLOOD 2.187500e+05
+## 154                 HEAVY SNOW/ICE 2.183333e+05
+## 397                     WATERSPOUT 2.078600e+05
+## 205               LAKE-EFFECT SNOW 2.067784e+05
+## 81                             FOG 2.023923e+05
+## 345              THUNDERTORM WINDS 2.020000e+05
+## 241                      MUD SLIDE 2.000333e+05
+## 1               HIGH SURF ADVISORY 2.000000e+05
+## 122                       HAIL 450 2.000000e+05
+## 131              HEAT WAVE DROUGHT 2.000000e+05
+## 294              STORM FORCE WINDS 2.000000e+05
+## 166                      High Surf 1.900000e+05
+## 57               EXTREME WINDCHILL 1.887500e+05
+## 214               LATE SEASON SNOW 1.800000e+05
+## 133                      HEAVY MIX 1.631250e+05
+## 9            ASTRONOMICAL LOW TIDE 1.600000e+05
+## 412                           WIND 1.579000e+05
+## 100                      GLAZE ICE 1.522500e+05
+## 99                           GLAZE 1.516667e+05
+## 124                    HAIL DAMAGE 1.500000e+05
+## 261                     ROCK SLIDE 1.500000e+05
+## 323             THUNDERSTORM WINDS 1.469526e+05
+## 35                       DENSE FOG 1.465758e+05
+## 389                    URBAN FLOOD 1.315683e+05
+## 278             SNOW FREEZING RAIN 1.305000e+05
+## 129                           HEAT 1.283571e+05
+## 342                  THUNDERSTORMW 1.250000e+05
+## 30                 COLD/WIND CHILL 1.243750e+05
+## 264                         SEICHE 1.088889e+05
+## 378                 TSTM WIND/HAIL 1.033462e+05
+## 11                   Beach Erosion 1.000000e+05
+## 36                     DENSE SMOKE 1.000000e+05
+## 51                   Extended Cold 1.000000e+05
+## 299                   Strong Winds 1.000000e+05
+## 377                  TSTM WIND G58 1.000000e+05
+## 40                  DRY MICROBURST 9.757391e+04
+## 111                    Gusty Winds 9.380000e+04
+## 221                      LIGHTNING 8.979494e+04
+## 395           URBAN/SML STREAM FLD 8.638467e+04
+## 341            THUNDERSTORMS WINDS 8.550833e+04
+## 219                 Light Snowfall 8.500000e+04
+## 95                    FROST/FREEZE 8.172414e+04
+## 309              THUNDERSTORM WIND 8.014360e+04
+## 374        TSTM WIND AND LIGHTNING 8.000000e+04
+## 239            Mixed Precipitation 7.833333e+04
+## 49                  EXCESSIVE SNOW 7.740000e+04
+## 121                       HAIL 275 7.500000e+04
+## 382               TUNDERSTORM WIND 7.500000e+04
+## 364                      TSTM WIND 7.295651e+04
+## 231               MARINE HIGH WIND 7.205611e+04
+## 44                      DUST STORM 7.114103e+04
+## 390                 URBAN FLOODING 7.007000e+04
+## 160                     HEAVY SURF 6.950000e+04
+## 10                       AVALANCHE 6.892222e+04
+## 281                   SNOW SQUALLS 6.800000e+04
+## 300                   STRONG WINDS 6.256189e+04
+## 119                       HAIL 175 6.000000e+04
+## 423             WINTER WEATHER MIX 6.000000e+04
+## 266      SEVERE THUNDERSTORM WINDS 5.833333e+04
+## 305                   THUNDERSTORM 5.753438e+04
+## 337            THUNDERSTORM WINDSS 5.736250e+04
+## 422                 WINTER WEATHER 5.579144e+04
+## 298                    STRONG WIND 5.344357e+04
+## 424             WINTER WEATHER/MIX 5.222951e+04
+## 234               MARINE TSTM WIND 5.212500e+04
+## 2                      FLASH FLOOD 5.000000e+04
+## 24                   Coastal Storm 5.000000e+04
+## 45           DUST STORM/HIGH WINDS 5.000000e+04
+## 56              EXTREME WIND CHILL 5.000000e+04
+## 60       FLASH FLOOD FROM ICE JAMS 5.000000e+04
+## 61          FLASH FLOOD LANDSLIDES 5.000000e+04
+## 91             FREEZING RAIN/SLEET 5.000000e+04
+## 105                GROUND BLIZZARD 5.000000e+04
+## 150            HEAVY SNOW/BLIZZARD 5.000000e+04
+## 155             HEAVY SNOW/SQUALLS 5.000000e+04
+## 156                HEAVY SNOW/WIND 5.000000e+04
+## 159                     Heavy Surf 5.000000e+04
+## 161    HEAVY SURF COASTAL FLOODING 5.000000e+04
+## 173             HIGH WIND AND SEAS 5.000000e+04
+## 175             HIGH WIND/BLIZZARD 5.000000e+04
+## 176           HIGH WIND/HEAVY SNOW 5.000000e+04
+## 180                    HIGH WINDS/ 5.000000e+04
+## 184                HIGH WINDS/SNOW 5.000000e+04
+## 197                      ICE FLOES 5.000000e+04
+## 206               Lake Effect Snow 5.000000e+04
+## 229                Marine Accident 5.000000e+04
+## 242                     MUD SLIDES 5.000000e+04
+## 245                      MUDSLIDES 5.000000e+04
+## 248                          Other 5.000000e+04
+## 251                      RAINSTORM 5.000000e+04
+## 268              SEVERE TURBULENCE 5.000000e+04
+## 275            SNOW AND HEAVY SNOW 5.000000e+04
+## 282              SNOW/ BITTER COLD 5.000000e+04
+## 284              SNOW/BLOWING SNOW 5.000000e+04
+## 288                SNOW/HIGH WINDS 5.000000e+04
+## 290                 SNOW/ICE STORM 5.000000e+04
+## 292       SNOW/SLEET/FREEZING RAIN 5.000000e+04
+## 301              THUDERSTORM WINDS 5.000000e+04
+## 304                    THUNDERSNOW 5.000000e+04
+## 324          THUNDERSTORM WINDS 13 5.000000e+04
+## 335           THUNDERSTORM WINDS53 5.000000e+04
+## 380                          TSTMW 5.000000e+04
+## 357            TROPICAL DEPRESSION 4.962857e+04
+## 279                    SNOW SQUALL 4.857143e+04
+## 98                           Glaze 4.500000e+04
+## 247                  NON-TSTM WIND 4.000000e+04
+## 336         THUNDERSTORM WINDSHAIL 4.000000e+04
+## 400             WATERSPOUT TORNADO 4.000000e+04
+## 418                          WINDS 3.800000e+04
+## 186     HURRICANE-GENERATED SWELLS 3.750000e+04
+## 240            MIXED PRECIPITATION 3.700000e+04
+## 89                   Freezing Rain 3.500000e+04
+## 211                     LANDSLIDES 3.500000e+04
+## 310       THUNDERSTORM WIND 60 MPH 3.500000e+04
+## 149             HEAVY SNOW SQUALLS 3.425000e+04
+## 272                           Snow 3.250000e+04
+## 256                   RIP CURRENTS 3.240000e+04
+## 329   THUNDERSTORM WINDS LIGHTNING 3.175000e+04
+## 398                    WATERSPOUT- 3.007143e+04
+## 208                     LAKE FLOOD 3.000000e+04
+## 222             LIGHTNING  WAUSEON 3.000000e+04
+## 289                       SNOW/ICE 3.000000e+04
+## 363                      Tstm Wind 3.000000e+04
+## 367                TSTM WIND (G35) 3.000000e+04
+## 55                    EXTREME HEAT 2.875000e+04
+## 217                     Light Snow 2.809524e+04
+## 223       LIGHTNING AND HEAVY RAIN 2.800000e+04
+## 107                     GUSTY WIND 2.769231e+04
+## 16                      BRUSH FIRE 2.750000e+04
+## 86                Freezing Drizzle 2.750000e+04
+## 280                   Snow Squalls 2.750000e+04
+## 92              FREEZING RAIN/SNOW 2.500000e+04
+## 313       THUNDERSTORM WIND 98 MPH 2.500000e+04
+## 325      THUNDERSTORM WINDS 63 MPH 2.500000e+04
+## 215            LIGHT FREEZING RAIN 2.050000e+04
+## 106                       GUSTNADO 2.041000e+04
+## 14                    BLOWING DUST 2.000000e+04
+## 108                GUSTY WIND/HAIL 2.000000e+04
+## 235                     Microburst 2.000000e+04
+## 236                     MICROBURST 2.000000e+04
+## 373                  TSTM WIND 65) 2.000000e+04
+## 408              WILD/FOREST FIRES 2.000000e+04
+## 112                    GUSTY WINDS 1.905556e+04
+## 87                FREEZING DRIZZLE 1.875000e+04
+## 328        THUNDERSTORM WINDS HAIL 1.840541e+04
+## 233       MARINE THUNDERSTORM WIND 1.818333e+04
+## 334        THUNDERSTORM WINDS/HAIL 1.738095e+04
+## 204                      ICY ROADS 1.706000e+04
+## 97                    FUNNEL CLOUD 1.621667e+04
+## 218                     LIGHT SNOW 1.611765e+04
+## 350                     TORNADO F0 1.524000e+04
+## 15                    blowing snow 1.500000e+04
+## 85                Freezing drizzle 1.500000e+04
+## 163                   HEAVY SWELLS 1.500000e+04
+## 372                   TSTM WIND 55 1.500000e+04
+## 399             WATERSPOUT-TORNADO 1.500000e+04
+## 26                            Cold 1.350000e+04
+## 84                          FREEZE 1.281250e+04
+## 306            THUNDERSTORM  WINDS 1.250000e+04
+## 232             MARINE STRONG WIND 1.230382e+04
+## 201                      ICE ROADS 1.200000e+04
+## 379                     TSTM WINDS 1.180000e+04
+## 403                 WET MICROBURST 1.166667e+04
+## 75               FLOOD/FLASH/FLOOD 1.000000e+04
+## 104                    GRASS FIRES 1.000000e+04
+## 148              Heavy snow shower 1.000000e+04
+## 172                   HIGH WIND 48 1.000000e+04
+## 225   LIGHTNING THUNDERSTORM WINDS 1.000000e+04
+## 262                     ROUGH SURF 1.000000e+04
+## 331      THUNDERSTORM WINDS/ FLOOD 1.000000e+04
+## 347                 Tidal Flooding 1.000000e+04
+## 371                   TSTM WIND 45 1.000000e+04
+## 411                           Wind 1.000000e+04
+## 414                    Wind Damage 1.000000e+04
+## 426                     WINTRY MIX 1.000000e+04
+## 415                    WIND DAMAGE 9.625000e+03
+## 171                HIGH WIND (G40) 9.000000e+03
+## 297                    Strong Wind 9.000000e+03
+## 42                      DUST DEVIL 8.646049e+03
+## 101                  gradient wind 8.500000e+03
+## 4                  TSTM WIND (G45) 8.000000e+03
+## 366                 TSTM WIND (41) 8.000000e+03
+## 165                      HIGH SEAS 7.750000e+03
+## 270                     SMALL HAIL 7.000000e+03
+## 405                      WHIRLWIND 7.000000e+03
+## 369                TSTM WIND (G45) 6.152778e+03
+## 59        FLASH FLOOD - HEAVY RAIN 6.000000e+03
+## 103                  GRADIENT WIND 6.000000e+03
+## 146             HEAVY SNOW-SQUALLS 5.866667e+03
+## 394       URBAN/SMALL STREAM FLOOD 5.672222e+03
+## 207               LAKE EFFECT SNOW 5.666667e+03
+## 340             THUNDERSTORMS WIND 5.166667e+03
+## 5                                ? 5.000000e+03
+## 7                    APACHE COUNTY 5.000000e+03
+## 72                     FLOOD FLASH 5.000000e+03
+## 76                FLOOD/FLASHFLOOD 5.000000e+03
+## 116                       HAIL 100 5.000000e+03
+## 140  HEAVY RAIN/SMALL STREAM URBAN 5.000000e+03
+## 168                    HIGH SWELLS 5.000000e+03
+## 183          HIGH WINDS/HEAVY RAIN 5.000000e+03
+## 198                        ICE JAM 5.000000e+03
+## 216                     Light snow 5.000000e+03
+## 220                       LIGHTING 5.000000e+03
+## 226           LIGHTNING/HEAVY RAIN 5.000000e+03
+## 227                      LIGNTNING 5.000000e+03
+## 238                 MINOR FLOODING 5.000000e+03
+## 243      MUD SLIDES URBAN FLOODING 5.000000e+03
+## 246         NON-SEVERE WIND DAMAGE 5.000000e+03
+## 274              SNOW ACCUMULATION 5.000000e+03
+## 283                      SNOW/ ICE 5.000000e+03
+## 302            THUNDEERSTORM WINDS 5.000000e+03
+## 308              THUNDERSTORM HAIL 5.000000e+03
+## 314          THUNDERSTORM WIND G55 5.000000e+03
+## 319       THUNDERSTORM WIND/ TREES 5.000000e+03
+## 322    THUNDERSTORM WIND/LIGHTNING 5.000000e+03
+## 326         THUNDERSTORM WINDS AND 5.000000e+03
+## 330            THUNDERSTORM WINDS. 5.000000e+03
+## 332    THUNDERSTORM WINDS/FLOODING 5.000000e+03
+## 333 THUNDERSTORM WINDS/FUNNEL CLOU 5.000000e+03
+## 339                  THUNDERSTORMS 5.000000e+03
+## 344              THUNDERSTROM WIND 5.000000e+03
+## 365               TSTM WIND  (G45) 5.000000e+03
+## 368                TSTM WIND (G40) 5.000000e+03
+## 375               TSTM WIND DAMAGE 5.000000e+03
+## 388                URBAN AND SMALL 5.000000e+03
+## 393             URBAN/SMALL STREAM 5.000000e+03
+## 404                      Whirlwind 5.000000e+03
+## 102                  Gradient wind 4.666667e+03
+## 311       THUNDERSTORM WIND 65 MPH 4.000000e+03
+## 312        THUNDERSTORM WIND 65MPH 4.000000e+03
+## 316        THUNDERSTORM WIND TREES 4.000000e+03
+## 41                      Dust Devil 3.660000e+03
+## 213                      LANDSPOUT 3.500000e+03
+## 164                    HIGH  WINDS 3.000000e+03
+## 425                     Wintry Mix 2.500000e+03
+## 93                           FROST 2.142857e+03
+## 37                       DOWNBURST 2.000000e+03
+## 63             FLASH FLOOD/ STREET 2.000000e+03
+## 109            GUSTY WIND/HVY RAIN 2.000000e+03
+## 110                Gusty wind/rain 2.000000e+03
+## 230                    MARINE HAIL 2.000000e+03
+## 307         THUNDERSTORM DAMAGE TO 2.000000e+03
+## 320       THUNDERSTORM WIND/AWNING 2.000000e+03
+## 348                 TIDAL FLOODING 1.500000e+03
+## 263                    RURAL FLOOD 1.200000e+03
+## 65           FLASH FLOOD/LANDSLIDE 1.000000e+03
+## 114                      HAIL 0.75 1.000000e+03
+## 123                        HAIL 75 1.000000e+03
+## 199           Ice jam flood (minor 1.000000e+03
+## 255                    RIP CURRENT 1.000000e+03
+## 303            THUNDERESTORM WINDS 1.000000e+03
+## 318        THUNDERSTORM WIND/ TREE 1.000000e+03
+## 338              THUNDERSTORM WINS 1.000000e+03
+## 346              THUNERSTORM WINDS 1.000000e+03
+## 370                   TSTM WIND 40 1.000000e+03
+## 376                  TSTM WIND G45 1.000000e+03
+## 401            WATERSPOUT/ TORNADO 1.000000e+03
+## 391                   URBAN FLOODS 7.500000e+02
+## 43           DUST DEVIL WATERSPOUT 5.000000e+02
+## 144                   HEAVY SHOWER 5.000000e+02
+## 253                RECORD RAINFALL 5.000000e+02
+## 321         THUNDERSTORM WIND/HAIL 5.000000e+02
+## 343              THUNDERSTORMWINDS 5.000000e+02
+## 356                        TORNDAO 5.000000e+02
+## 417                      WIND/HAIL 5.000000e+02
+## 125                      HAIL/WIND 2.500000e+02
+## 249                          OTHER 1.718750e+02
+## 28                COLD AIR TORNADO 5.000000e+01
+## 276                   SNOW AND ICE 5.000000e+01
+## 392                    URBAN SMALL 5.000000e+01
+</code></pre>
+
+<h3>QUESTION: What was the mean dollar amount of crop damage based upon event type?</h3>
+
+<p>The strategy was to calculate the mean amount for each event type and limit the data set to 
+events with more than zero occurrences. The final step was to order the data in descending 
+order based upon dollar amount.  </p>
+
+<pre><code class="r">## Caculate mean amounts using the aggregate function and group by event type.
+mydata.mean.crop &lt;- aggregate(CROPDMGCOST ~ EVTYPE, data = mydata.2, mean)
+
+## Keep rows that do not equal zero.
+mydata.mean.crop.1 &lt;- mydata.mean.crop[mydata.mean.crop$CROPDMGCOST != 0,]
+
+## Order the data in descending order based upon the total cost per event type.
+mydata.mean.crop.1 &lt;- mydata.mean.crop.1[with(mydata.mean.crop.1, order(-CROPDMGCOST)), ]
+</code></pre>
+
+<p>The resulting data set, below, ordered from largest dollar amount descending, was exhausive. Further processing was necessary.   </p>
+
+<pre><code class="r">mydata.mean.crop.1
+</code></pre>
+
+<pre><code>##                            EVTYPE  CROPDMGCOST
+## 50              EXCESSIVE WETNESS 1.420000e+08
+## 29        COLD AND WET CONDITIONS 6.600000e+07
+## 34                DAMAGING FREEZE 6.552500e+07
+## 38                        DROUGHT 5.252844e+07
+## 258                   RIVER FLOOD 4.744773e+07
+## 46                    Early Frost 4.200000e+07
+## 193             HURRICANE/TYPHOON 3.725533e+07
+## 129                          HEAT 2.867582e+07
+## 84                         FREEZE 2.788906e+07
+## 188                HURRICANE ERIN 2.266833e+07
+## 77               FLOOD/RAIN/WINDS 2.256000e+07
+## 185                     HURRICANE 2.229195e+07
+## 52                   Extreme Cold 2.000000e+07
+## 48                 EXCESSIVE HEAT 1.969608e+07
+## 33                Damaging Freeze 1.706500e+07
+## 53                   EXTREME COLD 1.306033e+07
+## 192     HURRICANE OPAL/HIGH WINDS 1.000000e+07
+## 266     SEVERE THUNDERSTORM WINDS 9.666667e+06
+## 6             AGRICULTURAL FREEZE 9.606667e+06
+## 95                   FROST/FREEZE 9.431776e+06
+## 93                          FROST 9.428571e+06
+## 267          SEVERE THUNDERSTORMS 8.500000e+06
+## 385             UNSEASONABLY COLD 8.347500e+06
+## 362          TROPICAL STORM JERRY 8.000000e+06
+## 202                     ICE STORM 7.529406e+06
+## 128                   HARD FREEZE 6.550000e+06
+## 259                River Flooding 5.604000e+06
+## 83                         Freeze 5.250000e+06
+## 384             Unseasonable Cold 5.100000e+06
+## 31                   COOL AND WET 5.000000e+06
+## 387               UNSEASONAL RAIN 5.000000e+06
+## 420       WINTER STORM HIGH WINDS 5.000000e+06
+## 57              EXTREME WINDCHILL 4.250000e+06
+## 142                   HEAVY RAINS 3.184211e+06
+## 355    TORNADOES, TSTM WIND, HAIL 2.500000e+06
+## 270                    SMALL HAIL 2.079300e+06
+## 358                TROPICAL STORM 1.666698e+06
+## 137          Heavy Rain/High Surf 1.500000e+06
+## 182               HIGH WINDS/COLD 1.400000e+06
+## 191                HURRICANE OPAL 1.285714e+06
+## 55                   EXTREME HEAT 1.250000e+06
+## 200              ICE JAM FLOODING 1.000000e+06
+## 135                    HEAVY RAIN 7.106587e+05
+## 70                          FLOOD 5.630438e+05
+## 12                       BLIZZARD 5.261033e+05
+## 45          DUST STORM/HIGH WINDS 5.000000e+05
+## 82                   FOREST FIRES 5.000000e+05
+## 189               HURRICANE FELIX 5.000000e+05
+## 361         TROPICAL STORM GORDON 5.000000e+05
+## 421                 WINTER STORMS 5.000000e+05
+## 130                     HEAT WAVE 4.625000e+05
+## 409                      WILDFIRE 3.797851e+05
+## 74              FLOOD/FLASH FLOOD 3.468394e+05
+## 407              WILD/FOREST FIRE 3.306403e+05
+## 79                       FLOODING 1.670849e+05
+## 410                     WILDFIRES 1.666667e+05
+## 378                TSTM WIND/HAIL 1.508071e+05
+## 300                  STRONG WINDS 1.351351e+05
+## 250                          RAIN 1.250000e+05
+## 170                     HIGH WIND 1.193591e+05
+## 113                          HAIL 1.165955e+05
+## 145                    HEAVY SNOW 1.083291e+05
+## 210                     LANDSLIDE 1.059101e+05
+## 94                   Frost/Freeze 1.000000e+05
+## 383                       TYPHOON 9.166667e+04
+## 58                    FLASH FLOOD 6.889898e+04
+## 178                    HIGH WINDS 6.708501e+04
+## 305                  THUNDERSTORM 6.250000e+04
+## 66                 FLASH FLOODING 5.155648e+04
+## 118                      HAIL 150 5.000000e+04
+## 131             HEAT WAVE DROUGHT 5.000000e+04
+## 308             THUNDERSTORM HAIL 5.000000e+04
+## 360           TROPICAL STORM DEAN 5.000000e+04
+## 422                WINTER WEATHER 4.010695e+04
+## 44                     DUST STORM 3.974359e+04
+## 143          HEAVY RAINS/FLOODING 3.922222e+04
+## 30                COLD/WIND CHILL 3.750000e+04
+## 64              FLASH FLOOD/FLOOD 3.468750e+04
+## 249                         OTHER 3.232500e+04
+## 418                         WINDS 2.970588e+04
+## 265           SEVERE THUNDERSTORM 2.857143e+04
+## 126                    HAIL/WINDS 2.502500e+04
+## 67           FLASH FLOODING/FLOOD 2.187500e+04
+## 153 HEAVY SNOW/HIGH WINDS &amp; FLOOD 2.000000e+04
+## 298                   STRONG WIND 1.980894e+04
+## 419                  WINTER STORM 1.941210e+04
+## 296              STORM SURGE/TIDE 1.808511e+04
+## 80                         FLOODS 1.666667e+04
+## 323            THUNDERSTORM WINDS 1.616232e+04
+## 331     THUNDERSTORM WINDS/ FLOOD 1.500000e+04
+## 395          URBAN/SML STREAM FLD 1.257496e+04
+## 408             WILD/FOREST FIRES 1.200000e+04
+## 112                   GUSTY WINDS 1.111111e+04
+## 349                       TORNADO 1.054572e+04
+## 115                      HAIL 075 1.000000e+04
+## 116                      HAIL 100 1.000000e+04
+## 117                      HAIL 125 1.000000e+04
+## 120                      HAIL 200 1.000000e+04
+## 179        HIGH WINDS HEAVY RAINS 1.000000e+04
+## 315         THUNDERSTORM WIND G60 1.000000e+04
+## 327        THUNDERSTORM WINDS G60 1.000000e+04
+## 386             UNSEASONABLY WARM 1.000000e+04
+## 309             THUNDERSTORM WIND 9.545180e+03
+## 364                     TSTM WIND 9.012060e+03
+## 389                   URBAN FLOOD 6.643885e+03
+## 415                   WIND DAMAGE 6.250000e+03
+## 412                          WIND 5.454545e+03
+## 271            SMALL STREAM FLOOD 5.000000e+03
+## 301             THUDERSTORM WINDS 5.000000e+03
+## 339                 THUNDERSTORMS 5.000000e+03
+## 390                URBAN FLOODING 4.581250e+03
+## 194                      HVY RAIN 3.000000e+03
+## 317            THUNDERSTORM WIND. 3.000000e+03
+## 54        EXTREME COLD/WIND CHILL 2.500000e+03
+## 233      MARINE THUNDERSTORM WIND 2.083333e+03
+## 337           THUNDERSTORM WINDSS 1.860937e+03
+## 340            THUNDERSTORMS WIND 1.666667e+03
+## 350                    TORNADO F0 1.440000e+03
+## 334       THUNDERSTORM WINDS/HAIL 1.428571e+03
+## 381                       TSUNAMI 1.428571e+03
+## 328       THUNDERSTORM WINDS HAIL 1.324324e+03
+## 221                     LIGHTNING 1.169222e+03
+## 22               COASTAL FLOODING 1.018182e+03
+## 329  THUNDERSTORM WINDS LIGHTNING 8.333333e+02
+## 107                    GUSTY WIND 7.692308e+02
+## 39         DROUGHT/EXCESSIVE HEAT 6.422222e+02
+## 354                     TORNADOES 5.000000e+02
+## 260                RIVER FLOODING 4.166667e+02
+## 100                     GLAZE ICE 4.000000e+02
+## 106                      GUSTNADO 3.100000e+02
+## 40                 DRY MICROBURST 2.173913e+02
+## 273                          SNOW 2.083333e+02
+## 341           THUNDERSTORMS WINDS 1.666667e+02
+## 28               COLD AIR TORNADO 5.000000e+01
+## 125                     HAIL/WIND 5.000000e+01
+## 295                   STORM SURGE 2.890173e+01
+</code></pre>
+
+<h2>CONCLUSION #1</h2>
+
+<p>More event types resulted in property damage than crop damage.  </p>
+
+<p>The script counted the number of rows in the respective data sets for property and crop damage 
+to obtain the total number of event types for each damage category.  </p>
+
+<pre><code class="r">## Calculate the total number of event types with property damage
+mydata.mean.property.1.no &lt;- nrow(mydata.mean.property.1)
+mydata.mean.property.1.no
+</code></pre>
+
+<pre><code>## [1] 401
+</code></pre>
+
+<pre><code class="r">## Calculate the total number of event types with crop damage
+mydata.mean.crop.1.no &lt;- nrow(mydata.mean.crop.1)
+mydata.mean.crop.1.no
+</code></pre>
+
+<pre><code>## [1] 136
+</code></pre>
+
+<h2>CONCLUSION #2</h2>
+
+<p>The largest event type for property damage had more damage than the largest event for crop damage, 
+but both involved rain or moisture.   </p>
+
+<p>The script collected the first value in the ordered data sets for property and crop damage, respectively.  </p>
+
+<pre><code class="r">## Identify the event type with the highest property damage
+mydata.mean.property.1.high &lt;- mydata.mean.property.1[1,]
+mydata.mean.property.1.high
+</code></pre>
+
+<pre><code>##                        EVTYPE PROPDMGCOST
+## 139 HEAVY RAIN/SEVERE WEATHER     2.5e+09
+</code></pre>
+
+<pre><code class="r">## Identify the event type with the highest crop damage
+mydata.mean.crop.1.high &lt;- mydata.mean.crop.1[1,]
+mydata.mean.crop.1.high
+</code></pre>
+
+<pre><code>##               EVTYPE CROPDMGCOST
+## 50 EXCESSIVE WETNESS    1.42e+08
+</code></pre>
+
+<h2>Illustrative Graph</h2>
+
+<p>The side-by-side boxplot graphs showed the mean dollar amount of property and crop damage on 
+the same log scale. Due to the size of the dollar amounts, the y-axis scale used the log of the 
+mean values. The graph marked the box boundaries for the 1st and 3rd quartiles. Outliers appeared as 
+circles.</p>
+
+<pre><code class="r">## Set graph properties for property and crop damage
+mymain.property &lt;- &quot;Mean $ Amount Property Damage&quot;
+myxlab.property &lt;- &quot;1st Quartile to 3rd Quartile Box&quot;
+myylab.property &lt;- &quot;Mean Number on Log Scale&quot;
+myylim.property &lt;- c(0,log(mydata.mean.property.1.high[1,2]))
+mymain.crop &lt;- &quot;Mean $ Amount Crop Damage&quot;
+myxlab.crop &lt;- &quot;1st Quartile to 3rd Quartile Box&quot;
+myylab.crop &lt;- &quot;Mean Number on Log Scale&quot;
+myylim.crop &lt;- c(0,log(mydata.mean.property.1.high[1,2]))
+
+## Create one row, two column layout for the property and crop damage boxplots, respectively
+par(mfrow = c(1, 2))
+
+boxplot(log(mydata.mean.property.1$PROPDMGCOST), main=mymain.property, xlab=myxlab.property, ylab=myylab.property, 
+ylim=myylim.property)
+
+boxplot(log(mydata.mean.crop.1$CROPDMGCOST), main=mymain.crop, xlab=myxlab.crop, ylab=myylab.crop, ylim=myylim.crop)
+</code></pre>
+
+<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfgAAAH4CAMAAACR9g9NAAAAnFBMVEX9/v0AAAAAADkAAGUAOTkAOWUAOY8AZo8AZrU5AAA5ADk5AGU5OQA5OWU5OY85ZmU5ZrU5j485j9plAABlADllAGVlOQBlZjllZmVlj49ltbVltf2POQCPOTmPOWWPtY+P27WP29qP2/21ZgC1jzm1tWW124+1/rW1/v3ajzna24/a/rXa/tra/v39tWX9tY/924/9/rX9/tr9/v1Cvo4FAAAANHRSTlP///////////////////////////////////////////////////////////////////8AS1ciZQAAAAlwSFlzAAALEgAACxIB0t1+/AAAEm9JREFUeJztnQl74lYSRSM7IZCe8STQzvQMdBZI0lYSa1j+/3+bt0hCshHa6j1Vqe75uts2ja7e1RFaAKOvLkAlX009ADANEK8UiFcKxCsF4pUC8UqBeKVAvFIgXikQrxSIVwrEKwXilQLxSoF4pUC8UiBeKRCvFIhXCsQrBeKVAvFKgXilQLxSiMSna5oc8YhZEI3iz7sksSXSJFm8toScNpU7mQmXfUZw2JYZhm3vCStj6Dd9R2IviLxKywo0uu4d8Q//MB1s7ba+fhBFyeMqeXzpPoBDUhP/sO87YW0QrQusP7EXxCXzRe6vNKPr3hP/bzPu0+ZfK9s3zVevzMs57x5/T4peWbL47YdNUTJNPtl7Zsm3O3OH1E+W+jGayWzk4rWY3i5OX9Heatuv7YztLK6TFHPKx+Du4PjWxmW+/MkNIEvcLW6MtRHkt1l/j182eaNOSyj2gjDfre39HvbNS2JY3doj5Z74n1dbk/Af2/eQr15+RbPjrayVx9Xit/V1usc/VstyvU3cUA/5vSt9/S03xbs5XCdJ/CzLMbhbvvnR/m9quhz8RsIvCfu4KcZYHUFt3F8XjbqKj7ogjm79Ou+2l8YlMbBubftwT/wvm/UlNaNfvLrBuMHm83SrZVZs+w6VzONqefYPxMcXs7Ez43rYH1dGjv2m2jef/t2m3u8aK5P4xbwtx5DvO+2ExcyuSyL1cfan6giK244rc680yRt1FR91QWRlQtOSGFq3GHer+P1h8fdu8eeqXJtsohVk+7rRFAuvsgO0Q7F/MzNov2Qe9pkzZW6t9C2mr4t3G087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" alt="plot of chunk p2plotboxplot"/> </p>
+
+<h2>CONCLUSION #3</h2>
+
+<p>In total, 111 event types had both property damage and crop damage.  </p>
+
+<p>The script merged the property damage and crop damage data sets, focusing on common event types. 
+It calculated the number of events by counting the number of rows in the merged data set.  </p>
+
+<pre><code class="r">## Merge the property and crop mean data sets and order in descending order by property damage and crop damage
+mydata.mean.merge.nonpeople &lt;- merge(mydata.mean.property.1, mydata.mean.crop.1, by.x=&quot;EVTYPE&quot;, by.y=&quot;EVTYPE&quot;)
+mydata.mean.merge.nonpeople &lt;- mydata.mean.merge.nonpeople[with(mydata.mean.merge.nonpeople, order(-PROPDMGCOST, -CROPDMGCOST)), ]
+mydata.mean.merge.nonpeople
+</code></pre>
+
+<pre><code>##                            EVTYPE  PROPDMGCOST  CROPDMGCOST
+## 89     TORNADOES, TSTM WIND, HAIL 1.600000e+09 2.500000e+06
+## 54              HURRICANE/TYPHOON 9.900834e+08 3.725533e+07
+## 52                 HURRICANE OPAL 4.504066e+08 1.285714e+06
+## 70                    STORM SURGE 2.504251e+08 2.890173e+01
+## 65            SEVERE THUNDERSTORM 1.721943e+08 2.857143e+04
+## 53      HURRICANE OPAL/HIGH WINDS 1.000000e+08 1.000000e+07
+## 71               STORM SURGE/TIDE 9.874868e+07 1.808511e+04
+## 49                      HURRICANE 9.649040e+07 2.229195e+07
+## 97                        TYPHOON 6.669222e+07 9.166667e+04
+## 109       WINTER STORM HIGH WINDS 6.000000e+07 5.000000e+06
+## 62                    RIVER FLOOD 4.829194e+07 4.744773e+07
+## 50                 HURRICANE ERIN 4.301667e+07 2.266833e+07
+## 104                     WILDFIRES 3.350000e+07 1.666667e+05
+## 48                HIGH WINDS/COLD 2.210000e+07 1.400000e+06
+## 63                 River Flooding 2.123100e+07 5.604000e+06
+## 90                 TROPICAL STORM 1.892848e+07 1.666698e+06
+## 16              FLASH FLOOD/FLOOD 1.702812e+07 3.468750e+04
+## 19                          FLOOD 1.438521e+07 5.630438e+05
+## 40           Heavy Rain/High Surf 1.350000e+07 1.500000e+06
+## 96                        TSUNAMI 1.029014e+07 1.428571e+03
+## 101              WILD/FOREST FIRE 9.293590e+06 3.306403e+05
+## 47         HIGH WINDS HEAVY RAINS 7.500000e+06 1.000000e+04
+## 103                      WILDFIRE 6.124825e+06 3.797851e+05
+## 56                      ICE STORM 5.914434e+06 7.529406e+06
+## 23                   FOREST FIRES 5.000000e+06 5.000000e+05
+## 108                  WINTER STORM 4.818802e+06 1.941210e+04
+## 6                         DROUGHT 3.932729e+06 5.252844e+07
+## 1                        BLIZZARD 3.094901e+06 5.261033e+05
+## 2                COASTAL FLOODING 2.302555e+06 1.018182e+03
+## 93           TROPICAL STORM JERRY 2.300000e+06 8.000000e+06
+## 21                       FLOODING 2.042547e+06 1.670849e+05
+## 5                 DAMAGING FREEZE 2.000000e+06 6.552500e+07
+## 22                         FLOODS 2.000000e+06 1.666667e+04
+## 57                      LANDSLIDE 1.717439e+06 1.059101e+05
+## 44  HEAVY SNOW/HIGH WINDS &amp; FLOOD 1.500000e+06 2.000000e+04
+## 87                        TORNADO 1.446723e+06 1.054572e+04
+## 55               ICE JAM FLOODING 1.103200e+06 1.000000e+06
+## 17                 FLASH FLOODING 1.050388e+06 5.155648e+04
+## 46                     HIGH WINDS 1.002181e+06 6.708501e+04
+## 67           SEVERE THUNDERSTORMS 1.000000e+06 8.500000e+06
+## 26                   Frost/Freeze 1.000000e+06 1.000000e+05
+## 45                      HIGH WIND 9.850554e+05 1.193591e+05
+## 61                           RAIN 8.833417e+05 1.250000e+05
+## 37                      HEAT WAVE 8.716708e+05 4.625000e+05
+## 64                 RIVER FLOODING 8.449167e+05 4.166667e+02
+## 15                    FLASH FLOOD 7.824331e+05 6.889898e+04
+## 43                     HEAVY SNOW 7.502728e+05 1.083291e+05
+## 11                   EXTREME COLD 6.842162e+05 1.306033e+07
+## 39                     HEAVY RAIN 6.727210e+05 7.106587e+05
+## 41                    HEAVY RAINS 6.465816e+05 3.184211e+06
+## 20              FLOOD/FLASH FLOOD 6.351788e+05 3.468394e+05
+## 32                           HAIL 6.060876e+05 1.165955e+05
+## 42           HEAVY RAINS/FLOODING 5.400000e+05 3.922222e+04
+## 51                HURRICANE FELIX 5.000000e+05 5.000000e+05
+## 92          TROPICAL STORM GORDON 5.000000e+05 5.000000e+05
+## 110                 WINTER STORMS 5.000000e+05 5.000000e+05
+## 12        EXTREME COLD/WIND CHILL 4.324000e+05 2.500000e+03
+## 91            TROPICAL STORM DEAN 4.000000e+05 5.000000e+04
+## 10                 EXCESSIVE HEAT 3.101480e+05 1.969608e+07
+## 69                           SNOW 3.075531e+05 2.083333e+02
+## 35                     HAIL/WINDS 2.500000e+05 2.502500e+04
+## 18           FLASH FLOODING/FLOOD 2.187500e+05 2.187500e+04
+## 38              HEAT WAVE DROUGHT 2.000000e+05 5.000000e+04
+## 14              EXTREME WINDCHILL 1.887500e+05 4.250000e+06
+## 105                          WIND 1.579000e+05 5.454545e+03
+## 28                      GLAZE ICE 1.522500e+05 4.000000e+02
+## 78             THUNDERSTORM WINDS 1.469526e+05 1.616232e+04
+## 98                    URBAN FLOOD 1.315683e+05 6.643885e+03
+## 36                           HEAT 1.283571e+05 2.867582e+07
+## 4                 COLD/WIND CHILL 1.243750e+05 3.750000e+04
+## 95                 TSTM WIND/HAIL 1.033462e+05 1.508071e+05
+## 7                  DRY MICROBURST 9.757391e+04 2.173913e+02
+## 58                      LIGHTNING 8.979494e+04 1.169222e+03
+## 100          URBAN/SML STREAM FLD 8.638467e+04 1.257496e+04
+## 86            THUNDERSTORMS WINDS 8.550833e+04 1.666667e+02
+## 27                   FROST/FREEZE 8.172414e+04 9.431776e+06
+## 77              THUNDERSTORM WIND 8.014360e+04 9.545180e+03
+## 94                      TSTM WIND 7.295651e+04 9.012060e+03
+## 8                      DUST STORM 7.114103e+04 3.974359e+04
+## 99                 URBAN FLOODING 7.007000e+04 4.581250e+03
+## 73                   STRONG WINDS 6.256189e+04 1.351351e+05
+## 66      SEVERE THUNDERSTORM WINDS 5.833333e+04 9.666667e+06
+## 75                   THUNDERSTORM 5.753438e+04 6.250000e+04
+## 83            THUNDERSTORM WINDSS 5.736250e+04 1.860937e+03
+## 111                WINTER WEATHER 5.579144e+04 4.010695e+04
+## 72                    STRONG WIND 5.344357e+04 1.980894e+04
+## 9           DUST STORM/HIGH WINDS 5.000000e+04 5.000000e+05
+## 74              THUDERSTORM WINDS 5.000000e+04 5.000000e+03
+## 107                         WINDS 3.800000e+04 2.970588e+04
+## 80   THUNDERSTORM WINDS LIGHTNING 3.175000e+04 8.333333e+02
+## 13                   EXTREME HEAT 2.875000e+04 1.250000e+06
+## 30                     GUSTY WIND 2.769231e+04 7.692308e+02
+## 29                       GUSTNADO 2.041000e+04 3.100000e+02
+## 102             WILD/FOREST FIRES 2.000000e+04 1.200000e+04
+## 31                    GUSTY WINDS 1.905556e+04 1.111111e+04
+## 79        THUNDERSTORM WINDS HAIL 1.840541e+04 1.324324e+03
+## 59       MARINE THUNDERSTORM WIND 1.818333e+04 2.083333e+03
+## 82        THUNDERSTORM WINDS/HAIL 1.738095e+04 1.428571e+03
+## 88                     TORNADO F0 1.524000e+04 1.440000e+03
+## 24                         FREEZE 1.281250e+04 2.788906e+07
+## 81      THUNDERSTORM WINDS/ FLOOD 1.000000e+04 1.500000e+04
+## 106                   WIND DAMAGE 9.625000e+03 6.250000e+03
+## 68                     SMALL HAIL 7.000000e+03 2.079300e+06
+## 85             THUNDERSTORMS WIND 5.166667e+03 1.666667e+03
+## 76              THUNDERSTORM HAIL 5.000000e+03 5.000000e+04
+## 33                       HAIL 100 5.000000e+03 1.000000e+04
+## 84                  THUNDERSTORMS 5.000000e+03 5.000000e+03
+## 25                          FROST 2.142857e+03 9.428571e+06
+## 34                      HAIL/WIND 2.500000e+02 5.000000e+01
+## 60                          OTHER 1.718750e+02 3.232500e+04
+## 3                COLD AIR TORNADO 5.000000e+01 5.000000e+01
+</code></pre>
+
+<pre><code class="r">## Count the number of rows to calculate the number of event types with both property and crop damage
+mydata.mean.merge.nonpeople.no &lt;- nrow(mydata.mean.merge.nonpeople)
+mydata.mean.merge.nonpeople.no
+</code></pre>
+
+<pre><code>## [1] 111
+</code></pre>
+
+<h2>CONCLUSION #4</h2>
+
+<p>Storm-related events accounted for many of the events relating to property and crop damage.  </p>
+
+<p>The original data set was titled &ldquo;Storm Data,&rdquo; but most of the possible event descriptions 
+did not relate specifically to storms.  To see whether any &ldquo;storms&rdquo; impacted property or crop 
+damage I searched the event names on each list of events with calculated means of damage.</p>
+
+<p>The script searched the event types for &ldquo;storm&rdquo; and calculated the number of events for property 
+and crop damage by counting the number of rows that &ldquo;storm&rdquo; in the name.  </p>
+
+<pre><code class="r">## Search for property damage event types with &quot;storm&quot;
+mydata.mean.property.storm &lt;- grep(&quot;[Ss][Tt][Oo][Rr][Mm]&quot;, mydata.mean.property.1$EVTYPE, value=TRUE)
+mydata.mean.property.storm
+</code></pre>
+
+<pre><code>##  [1] &quot;STORM SURGE&quot;                    &quot;SEVERE THUNDERSTORM&quot;           
+##  [3] &quot;STORM SURGE/TIDE&quot;               &quot;HAILSTORM&quot;                     
+##  [5] &quot;WINTER STORM HIGH WINDS&quot;        &quot;TROPICAL STORM&quot;                
+##  [7] &quot;ICE STORM&quot;                      &quot;TROPICAL STORM ALBERTO&quot;        
+##  [9] &quot;WINTER STORM&quot;                   &quot;TROPICAL STORM JERRY&quot;          
+## [11] &quot;SEVERE THUNDERSTORMS&quot;           &quot;BLIZZARD/WINTER STORM&quot;         
+## [13] &quot;FLASH FLOODING/THUNDERSTORM WI&quot; &quot;HEAVY SNOW/WINTER STORM&quot;       
+## [15] &quot;SLEET/ICE STORM&quot;                &quot;SNOW AND ICE STORM&quot;            
+## [17] &quot;TROPICAL STORM GORDON&quot;          &quot;WINTER STORMS&quot;                 
+## [19] &quot;TROPICAL STORM DEAN&quot;            &quot;WIND STORM&quot;                    
+## [21] &quot;STORM FORCE WINDS&quot;              &quot;THUNDERSTORM WINDS&quot;            
+## [23] &quot;THUNDERSTORMW&quot;                  &quot;THUNDERSTORMS WINDS&quot;           
+## [25] &quot;THUNDERSTORM WIND&quot;              &quot;TUNDERSTORM WIND&quot;              
+## [27] &quot;DUST STORM&quot;                     &quot;SEVERE THUNDERSTORM WINDS&quot;     
+## [29] &quot;THUNDERSTORM&quot;                   &quot;THUNDERSTORM WINDSS&quot;           
+## [31] &quot;Coastal Storm&quot;                  &quot;DUST STORM/HIGH WINDS&quot;         
+## [33] &quot;RAINSTORM&quot;                      &quot;SNOW/ICE STORM&quot;                
+## [35] &quot;THUDERSTORM WINDS&quot;              &quot;THUNDERSTORM WINDS 13&quot;         
+## [37] &quot;THUNDERSTORM WINDS53&quot;           &quot;THUNDERSTORM WINDSHAIL&quot;        
+## [39] &quot;THUNDERSTORM WIND 60 MPH&quot;       &quot;THUNDERSTORM WINDS LIGHTNING&quot;  
+## [41] &quot;THUNDERSTORM WIND 98 MPH&quot;       &quot;THUNDERSTORM WINDS 63 MPH&quot;     
+## [43] &quot;THUNDERSTORM WINDS HAIL&quot;        &quot;MARINE THUNDERSTORM WIND&quot;      
+## [45] &quot;THUNDERSTORM WINDS/HAIL&quot;        &quot;THUNDERSTORM  WINDS&quot;           
+## [47] &quot;LIGHTNING THUNDERSTORM WINDS&quot;   &quot;THUNDERSTORM WINDS/ FLOOD&quot;     
+## [49] &quot;THUNDERSTORMS WIND&quot;             &quot;THUNDEERSTORM WINDS&quot;           
+## [51] &quot;THUNDERSTORM HAIL&quot;              &quot;THUNDERSTORM WIND G55&quot;         
+## [53] &quot;THUNDERSTORM WIND/ TREES&quot;       &quot;THUNDERSTORM WIND/LIGHTNING&quot;   
+## [55] &quot;THUNDERSTORM WINDS AND&quot;         &quot;THUNDERSTORM WINDS.&quot;           
+## [57] &quot;THUNDERSTORM WINDS/FLOODING&quot;    &quot;THUNDERSTORM WINDS/FUNNEL CLOU&quot;
+## [59] &quot;THUNDERSTORMS&quot;                  &quot;THUNDERSTORM WIND 65 MPH&quot;      
+## [61] &quot;THUNDERSTORM WIND 65MPH&quot;        &quot;THUNDERSTORM WIND TREES&quot;       
+## [63] &quot;THUNDERSTORM DAMAGE TO&quot;         &quot;THUNDERSTORM WIND/AWNING&quot;      
+## [65] &quot;THUNDERESTORM WINDS&quot;            &quot;THUNDERSTORM WIND/ TREE&quot;       
+## [67] &quot;THUNDERSTORM WINS&quot;              &quot;THUNERSTORM WINDS&quot;             
+## [69] &quot;THUNDERSTORM WIND/HAIL&quot;         &quot;THUNDERSTORMWINDS&quot;
+</code></pre>
+
+<pre><code class="r">## Calculate the number of events for property damage with &quot;storm&quot; in the name
+mydata.mean.property.storm.no &lt;- length(grep(&quot;[Ss][Tt][Oo][Rr][Mm]&quot;, mydata.mean.property.1$EVTYPE, value=TRUE))
+mydata.mean.property.storm.no
+</code></pre>
+
+<pre><code>## [1] 70
+</code></pre>
+
+<pre><code class="r">## count of total property events
+mydata.mean.property.1.no
+</code></pre>
+
+<pre><code>## [1] 401
+</code></pre>
+
+<pre><code class="r">## Search for crop damage event types with &quot;storm&quot;
+mydata.mean.crop.storm &lt;- grep(&quot;[Ss][Tt][Oo][Rr][Mm]&quot;, mydata.mean.crop.1$EVTYPE, value=TRUE)
+mydata.mean.crop.storm
+</code></pre>
+
+<pre><code>##  [1] &quot;SEVERE THUNDERSTORM WINDS&quot;    &quot;SEVERE THUNDERSTORMS&quot;        
+##  [3] &quot;TROPICAL STORM JERRY&quot;         &quot;ICE STORM&quot;                   
+##  [5] &quot;WINTER STORM HIGH WINDS&quot;      &quot;TROPICAL STORM&quot;              
+##  [7] &quot;DUST STORM/HIGH WINDS&quot;        &quot;TROPICAL STORM GORDON&quot;       
+##  [9] &quot;WINTER STORMS&quot;                &quot;THUNDERSTORM&quot;                
+## [11] &quot;THUNDERSTORM HAIL&quot;            &quot;TROPICAL STORM DEAN&quot;         
+## [13] &quot;DUST STORM&quot;                   &quot;SEVERE THUNDERSTORM&quot;         
+## [15] &quot;WINTER STORM&quot;                 &quot;STORM SURGE/TIDE&quot;            
+## [17] &quot;THUNDERSTORM WINDS&quot;           &quot;THUNDERSTORM WINDS/ FLOOD&quot;   
+## [19] &quot;THUNDERSTORM WIND G60&quot;        &quot;THUNDERSTORM WINDS G60&quot;      
+## [21] &quot;THUNDERSTORM WIND&quot;            &quot;THUDERSTORM WINDS&quot;           
+## [23] &quot;THUNDERSTORMS&quot;                &quot;THUNDERSTORM WIND.&quot;          
+## [25] &quot;MARINE THUNDERSTORM WIND&quot;     &quot;THUNDERSTORM WINDSS&quot;         
+## [27] &quot;THUNDERSTORMS WIND&quot;           &quot;THUNDERSTORM WINDS/HAIL&quot;     
+## [29] &quot;THUNDERSTORM WINDS HAIL&quot;      &quot;THUNDERSTORM WINDS LIGHTNING&quot;
+## [31] &quot;THUNDERSTORMS WINDS&quot;          &quot;STORM SURGE&quot;
+</code></pre>
+
+<pre><code class="r">## Calculate the number of events for crop damage with &quot;storm&quot; in the name
+mydata.mean.crop.storm.no &lt;- length(grep(&quot;[Ss][Tt][Oo][Rr][Mm]&quot;, mydata.mean.crop.1$EVTYPE, value=TRUE))
+mydata.mean.crop.storm.no
+</code></pre>
+
+<pre><code>## [1] 32
+</code></pre>
+
+<pre><code class="r">## count of total crop events
+mydata.mean.crop.1.no
+</code></pre>
+
+<pre><code>## [1] 136
+</code></pre>
+
+<p>Out of the events with property damage, <code>mydata.mean.property.1.no</code> variable with 
+<strong>401</strong>  events, <strong>70</strong> events were 
+related to storms, based upon the <code>mydata.mean.property.storm.no</code> variable.   </p>
+
+<p>Out of the events with crop damage, <code>mydata.mean.crop.1.no</code> variable with 
+<strong>136</strong>  events, 32** events were 
+related to storms, based upon the <code>mydata.mean.crop.storm.no</code> variable.   </p>
+
+<h2>FINAL CONCLUSION</h2>
+
+<p>Eight events had all four factors&ndash;human injuries and fatalities, property and crop damage&ndash;
+and five of those events were directly related to heat.</p>
+
+<p>The script merged the four mean data sets, looking for event types common to all four data sets.</p>
+
+<pre><code class="r">## Merge four mean data sets into one, with matching on the &quot;event type&quot; EVTYPE field.
+
+mydata.mean.merge.all &lt;- merge(mydata.mean.injuries.1, mydata.mean.fatalities.1, by.x=&quot;EVTYPE&quot;, by.y=&quot;EVTYPE&quot;)
+mydata.mean.merge.all &lt;- merge(mydata.mean.merge.all, mydata.mean.property.1, by.x=&quot;EVTYPE&quot;, by.y=&quot;EVTYPE&quot;)
+mydata.mean.merge.all &lt;- merge(mydata.mean.merge.all, mydata.mean.crop.1, by.x=&quot;EVTYPE&quot;, by.y=&quot;EVTYPE&quot;)
+mydata.mean.merge.all
+</code></pre>
+
+<pre><code>##                  EVTYPE  INJURIES FATALITIES PROPDMGCOST  CROPDMGCOST
+## 1        EXCESSIVE HEAT  3.888558   1.134088    310148.0 19696080.000
+## 2          EXTREME HEAT  7.045455   4.363636     28750.0  1250000.000
+## 3                  HEAT  2.737940   1.221643    128357.1 28675821.429
+## 4             HEAT WAVE  4.175676   2.324324    871670.8   462500.000
+## 5     HEAT WAVE DROUGHT 15.000000   4.000000    200000.0    50000.000
+## 6 TROPICAL STORM GORDON 43.000000   8.000000    500000.0   500000.000
+## 7               TSUNAMI  6.450000   1.650000  10290142.9     1428.571
+## 8         WINTER STORMS  5.666667   3.333333    500000.0   500000.000
+</code></pre>
+
+<pre><code class="r">## Calculate the number of rows of the merged data set to obtain the total count
+mydata.mean.merge.all.no &lt;- nrow(mydata.mean.merge.all)
+mydata.mean.merge.all.no
+</code></pre>
+
+<pre><code>## [1] 8
+</code></pre>
+
+<p>The script then determined the number of event types that contained &ldquo;heat.&rdquo;</p>
+
+<pre><code class="r">## Calculate which event types have &quot;heat&quot; in their names
+mydata.mean.merge.all.heat &lt;- grep(&quot;[Hh][Ee][Aa][Tt]&quot;, mydata.mean.merge.all$EVTYPE, value=TRUE)
+mydata.mean.merge.all.heat
+</code></pre>
+
+<pre><code>## [1] &quot;EXCESSIVE HEAT&quot;    &quot;EXTREME HEAT&quot;      &quot;HEAT&quot;             
+## [4] &quot;HEAT WAVE&quot;         &quot;HEAT WAVE DROUGHT&quot;
+</code></pre>
+
+<pre><code class="r">## Calculate the number of event types with &quot;heat&quot; in their names
+mydata.mean.merge.all.heat.no &lt;- length(grep(&quot;[Hh][Ee][Aa][Tt]&quot;, mydata.mean.merge.all$EVTYPE, value=TRUE))
+mydata.mean.merge.all.heat.no
+</code></pre>
+
+<pre><code>## [1] 5
+</code></pre>
+
+<h1>System Configuration</h1>
+
+<p>The following version of R and computer platform generated the code and graphs.</p>
+
+<pre><code class="r">## Version information
+myrversion &lt;- R.Version()
+myrversion$version.string
+</code></pre>
+
+<pre><code>## [1] &quot;R version 3.1.1 (2014-07-10)&quot;
+</code></pre>
+
+<pre><code class="r">myrversion$platform
+</code></pre>
+
+<pre><code>## [1] &quot;x86_64-w64-mingw32&quot;
+</code></pre>
+
+<p>The internet connection speed allows sufficient time to download the file. The most time intensive 
+part of the process is loading the data. Limiting the number of columns, or variables, significantly 
+reduced the run-time speed.</p>
+
+<h1>Appendix I:     Data Definitions</h1>
+
+<h3>Data definition</h3>
+
+<h4>Loaded data with crop and property damage calculations.</h4>
+
+<pre><code class="r">str(mydata)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    902297 obs. of  9 variables:
+##  $ EVTYPE     : chr  &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; &quot;TORNADO&quot; ...
+##  $ FATALITIES : num  0 0 0 0 0 0 0 0 1 0 ...
+##  $ INJURIES   : num  15 0 2 2 2 6 1 0 14 0 ...
+##  $ PROPDMG    : num  25 2.5 25 2.5 2.5 2.5 2.5 2.5 25 25 ...
+##  $ PROPDMGEXP : Factor w/ 19 levels &quot;&quot;,&quot;-&quot;,&quot;?&quot;,&quot;+&quot;,..: 17 17 17 17 17 17 17 17 17 17 ...
+##  $ CROPDMG    : num  0 0 0 0 0 0 0 0 0 0 ...
+##  $ CROPDMGEXP : Factor w/ 9 levels &quot;&quot;,&quot;?&quot;,&quot;0&quot;,&quot;2&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ PROPDMGCOST: num  25000 2500 25000 2500 2500 2500 2500 2500 25000 25000 ...
+##  $ CROPDMGCOST: num  0 0 0 0 0 0 0 0 0 0 ...
+</code></pre>
+
+<h3>Data definition</h3>
+
+<h4>Merged injury and fatality data with common event types</h4>
+
+<pre><code class="r">str(mydata.mean.merge.people)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    11 obs. of  3 variables:
+##  $ EVTYPE    : chr  &quot;TROPICAL STORM GORDON&quot; &quot;HIGH WIND AND SEAS&quot; &quot;HEAT WAVE DROUGHT&quot; &quot;EXTREME HEAT&quot; ...
+##  $ INJURIES  : num  43 20 15 7.05 6.45 ...
+##  $ FATALITIES: num  8 3 4 4.36 1.65 ...
+</code></pre>
+
+<h3>Data definition</h3>
+
+<h4>Merged crop and property damage data with common event types</h4>
+
+<pre><code class="r">str(mydata.mean.merge.nonpeople)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    111 obs. of  3 variables:
+##  $ EVTYPE     : chr  &quot;TORNADOES, TSTM WIND, HAIL&quot; &quot;HURRICANE/TYPHOON&quot; &quot;HURRICANE OPAL&quot; &quot;STORM SURGE&quot; ...
+##  $ PROPDMGCOST: num  1.60e+09 9.90e+08 4.50e+08 2.50e+08 1.72e+08 ...
+##  $ CROPDMGCOST: num  2.50e+06 3.73e+07 1.29e+06 2.89e+01 2.86e+04 ...
+</code></pre>
+
+<h3>Data definition</h3>
+
+<h4>Merged data for human fatalities and injuries and property and crop damage with common event types</h4>
+
+<pre><code class="r">str(mydata.mean.merge.all)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    8 obs. of  5 variables:
+##  $ EVTYPE     : chr  &quot;EXCESSIVE HEAT&quot; &quot;EXTREME HEAT&quot; &quot;HEAT&quot; &quot;HEAT WAVE&quot; ...
+##  $ INJURIES   : num  3.89 7.05 2.74 4.18 15 ...
+##  $ FATALITIES : num  1.13 4.36 1.22 2.32 4 ...
+##  $ PROPDMGCOST: num  310148 28750 128357 871671 200000 ...
+##  $ CROPDMGCOST: num  19696080 1250000 28675821 462500 50000 ...
+</code></pre>
+
+<h1>Appendix II:  Other References</h1>
+
+<p>&ldquo;NOAA National Severe Storms Laboratory.&rdquo; NSSL: Severe Weather 101. Accessed January 25, 2015. <a href="http://www.nssl.noaa.gov/education/svrwx101/">http://www.nssl.noaa.gov/education/svrwx101/</a>.</p>
+
+<p>The web site lists seven severe storm types:  thunderstorms, tornadoes, floods, lightening, hail, 
+damaging winds and winter weather.</p>
+
+</body>
+
+</html>
